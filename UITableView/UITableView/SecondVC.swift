@@ -50,12 +50,12 @@ class SecondVC: UIViewController {
         familyLabel.text = player?.lastName
         
         let biography = player?.biography ?? ""
-        let widthLabel = UIScreen.main.bounds.width
-        let heightLabel = biography.height(withConstrainedWidth: widthLabel, font: biographyLabel.font)
-        biographyLabel.heightAnchor.constraint(equalToConstant: heightLabel).isActive = true
+        let widthBiography = UIScreen.main.bounds.width
+        let heightBiography = biography.height(withConstrainedWidth: widthBiography, font: biographyLabel.font)
+        biographyLabel.heightAnchor.constraint(equalToConstant: heightBiography).isActive = true
         biographyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         biographyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        biographyLabel.topAnchor.constraint(equalTo: familyLabel.bottomAnchor).isActive = true
+        biographyLabel.topAnchor.constraint(equalTo: familyLabel.bottomAnchor, constant: 10).isActive = true 
         
         biographyLabel.text = player?.biography
     }

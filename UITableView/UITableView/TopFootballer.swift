@@ -9,7 +9,7 @@
 import Foundation
 
 struct TopFootballer {
-    var fistName: String
-    var lastName: String
-    var biography: String
+    let fistName: String
+    let lastName: String
+    let biography: String
 }
