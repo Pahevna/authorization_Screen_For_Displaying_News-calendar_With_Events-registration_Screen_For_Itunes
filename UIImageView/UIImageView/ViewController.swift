@@ -50,19 +50,29 @@ class ViewController: UIViewController {
     }
     
     @objc func pressedButton(_ sender: UIButton) {
-        let random = arc4random_uniform(2)
         
-        switch random {
-        case 0:
-            myImageView.image = UIImage(named: imageArray[0])
-            countOfImageOne += 1
-            myLabel.text = "Image 1 selected \(countOfImageOne) times"
-        case 1:
-            myImageView.image = UIImage(named: imageArray[1])
-            countOfImageTwo += 1
-            myLabel.text = "Image 2 selected \(countOfImageTwo) times"
-        default:
-            break
+        DispatchQueue.global(qos: .background).async {
+            let random = arc4random_uniform(2)
+            
+            switch random {
+            case 0:
+                self.countOfImageOne += 1
+                
+                DispatchQueue.main.async {
+                    self.myImageView.image = UIImage(named: self.imageArray[0])
+                    self.myLabel.text = "Image 1 selected \(self.countOfImageOne) times"
+                }
+            case 1:
+                self.countOfImageTwo += 1
+             
+                DispatchQueue.main.async {
+                    self.myImageView.image = UIImage(named: self.imageArray[1])
+                    self.myLabel.text = "Image 2 selected \(self.countOfImageTwo) times"
+                }
+            
+            default:
+                break
+            }
         }
     }
 }
