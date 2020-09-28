@@ -51,7 +51,10 @@ class ViewController: UIViewController {
     
     @objc func pressedButton(_ sender: UIButton) {
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else {
+                return
+            }
             let random = arc4random_uniform(2)
             
             switch random {
