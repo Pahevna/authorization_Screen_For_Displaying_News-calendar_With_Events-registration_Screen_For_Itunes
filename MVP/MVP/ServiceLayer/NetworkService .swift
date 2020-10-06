@@ -18,13 +18,14 @@ class NetworkService: NetworkServiceProtocol {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
+            
+            guard let data = data else { return }
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             do {
-                let obj = try JSONDecoder().decode([Comment].self, from: data!)
+                let obj = try JSONDecoder().decode([Comment].self, from: data)            //do try catch ??? 
                 completion(.success(obj))
             } catch {
                 completion(.failure(error))

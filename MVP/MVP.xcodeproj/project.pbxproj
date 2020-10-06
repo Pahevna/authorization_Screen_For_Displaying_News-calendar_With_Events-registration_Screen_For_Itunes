@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04EDECB4252CDE7B000425E9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDECB3252CDE7B000425E9 /* DetailPresenter.swift */; };
+		04EDECB9252CE1B3000425E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDECB7252CE1B3000425E9 /* DetailViewController.swift */; };
+		04EDECBA252CE1B3000425E9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDECB8252CE1B3000425E9 /* DetailViewController.xib */; };
 		04F626AD252503640013C4A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626AC252503640013C4A9 /* AppDelegate.swift */; };
 		04F626AF252503640013C4A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626AE252503640013C4A9 /* SceneDelegate.swift */; };
 		04F626B1252503640013C4A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626B0252503640013C4A9 /* MainViewController.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04EDECB3252CDE7B000425E9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		04EDECB7252CE1B3000425E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04EDECB8252CE1B3000425E9 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		04F626A9252503640013C4A9 /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F626AC252503640013C4A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F626AE252503640013C4A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04EDECB5252CE146000425E9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04EDECB3252CDE7B000425E9 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		04EDECB6252CE15B000425E9 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				04EDECB5252CE146000425E9 /* Presenter */,
+				04EDECBB252CE1D0000425E9 /* View */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		04EDECBB252CE1D0000425E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04EDECB7252CE1B3000425E9 /* DetailViewController.swift */,
+				04EDECB8252CE1B3000425E9 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04F626A0252503640013C4A9 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +126,7 @@
 				04F626AC252503640013C4A9 /* AppDelegate.swift */,
 				04F626AE252503640013C4A9 /* SceneDelegate.swift */,
 				04F626D8252649A60013C4A9 /* ModuleBuilder .swift */,
+				04EDECB6252CE15B000425E9 /* DetailModule */,
 				04F626D225250B4A0013C4A9 /* MainModule */,
 				04F626E12529F3400013C4A9 /* ServiceLayer */,
 				04F626B2252503640013C4A9 /* Main.storyboard */,
@@ -240,6 +273,7 @@
 			files = (
 				04F626B92525036C0013C4A9 /* LaunchScreen.storyboard in Resources */,
 				04F626B62525036C0013C4A9 /* Assets.xcassets in Resources */,
+				04EDECBA252CE1B3000425E9 /* DetailViewController.xib in Resources */,
 				04F626B4252503640013C4A9 /* Main.storyboard in Resources */,
 				04F626D725250C220013C4A9 /* MainViewController.xib in Resources */,
 			);
@@ -259,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EDECB9252CE1B3000425E9 /* DetailViewController.swift in Sources */,
 				04F626D1252504140013C4A9 /* MainPresenter.swift in Sources */,
 				04F626B1252503640013C4A9 /* MainViewController.swift in Sources */,
 				04F626E02529F3220013C4A9 /* NetworkService .swift in Sources */,
+				04EDECB4252CDE7B000425E9 /* DetailPresenter.swift in Sources */,
 				04F626AD252503640013C4A9 /* AppDelegate.swift in Sources */,
 				04F626CF252503B30013C4A9 /* Comment.swift in Sources */,
 				04F626D9252649A60013C4A9 /* ModuleBuilder .swift in Sources */,
