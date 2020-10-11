@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04986A8C2533426B00884F8E /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A8B2533426B00884F8E /* RouterTest.swift */; };
 		04EDECB4252CDE7B000425E9 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDECB3252CDE7B000425E9 /* DetailPresenter.swift */; };
 		04EDECB9252CE1B3000425E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDECB7252CE1B3000425E9 /* DetailViewController.swift */; };
 		04EDECBA252CE1B3000425E9 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDECB8252CE1B3000425E9 /* DetailViewController.xib */; };
+		04EDECBD252F797A000425E9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDECBC252F797A000425E9 /* Router.swift */; };
 		04F626AD252503640013C4A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626AC252503640013C4A9 /* AppDelegate.swift */; };
 		04F626AF252503640013C4A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626AE252503640013C4A9 /* SceneDelegate.swift */; };
 		04F626B1252503640013C4A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626B0252503640013C4A9 /* MainViewController.swift */; };
@@ -20,7 +22,7 @@
 		04F626CF252503B30013C4A9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626CE252503B30013C4A9 /* Comment.swift */; };
 		04F626D1252504140013C4A9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626D0252504140013C4A9 /* MainPresenter.swift */; };
 		04F626D725250C220013C4A9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F626D625250C220013C4A9 /* MainViewController.xib */; };
-		04F626D9252649A60013C4A9 /* ModuleBuilder .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626D8252649A60013C4A9 /* ModuleBuilder .swift */; };
+		04F626D9252649A60013C4A9 /* AssemblyModuleBuilder .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626D8252649A60013C4A9 /* AssemblyModuleBuilder .swift */; };
 		04F626DE25264F4D0013C4A9 /* MainPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626DD25264F4D0013C4A9 /* MainPresenterTest.swift */; };
 		04F626E02529F3220013C4A9 /* NetworkService .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F626DF2529F3220013C4A9 /* NetworkService .swift */; };
 /* End PBXBuildFile section */
@@ -36,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04986A8B2533426B00884F8E /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
 		04EDECB3252CDE7B000425E9 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		04EDECB7252CE1B3000425E9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04EDECB8252CE1B3000425E9 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		04EDECBC252F797A000425E9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		04F626A9252503640013C4A9 /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F626AC252503640013C4A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F626AE252503640013C4A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +57,7 @@
 		04F626CE252503B30013C4A9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		04F626D0252504140013C4A9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		04F626D625250C220013C4A9 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		04F626D8252649A60013C4A9 /* ModuleBuilder .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleBuilder .swift"; sourceTree = "<group>"; };
+		04F626D8252649A60013C4A9 /* AssemblyModuleBuilder .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssemblyModuleBuilder .swift"; sourceTree = "<group>"; };
 		04F626DD25264F4D0013C4A9 /* MainPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTest.swift; sourceTree = "<group>"; };
 		04F626DF2529F3220013C4A9 /* NetworkService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +129,8 @@
 			children = (
 				04F626AC252503640013C4A9 /* AppDelegate.swift */,
 				04F626AE252503640013C4A9 /* SceneDelegate.swift */,
-				04F626D8252649A60013C4A9 /* ModuleBuilder .swift */,
+				04F626D8252649A60013C4A9 /* AssemblyModuleBuilder .swift */,
+				04EDECBC252F797A000425E9 /* Router.swift */,
 				04EDECB6252CE15B000425E9 /* DetailModule */,
 				04F626D225250B4A0013C4A9 /* MainModule */,
 				04F626E12529F3400013C4A9 /* ServiceLayer */,
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				04F626DD25264F4D0013C4A9 /* MainPresenterTest.swift */,
+				04986A8B2533426B00884F8E /* RouterTest.swift */,
 				04F626C32525036D0013C4A9 /* MVPTests.swift */,
 				04F626C52525036D0013C4A9 /* Info.plist */,
 			);
@@ -295,12 +301,13 @@
 			files = (
 				04EDECB9252CE1B3000425E9 /* DetailViewController.swift in Sources */,
 				04F626D1252504140013C4A9 /* MainPresenter.swift in Sources */,
+				04EDECBD252F797A000425E9 /* Router.swift in Sources */,
 				04F626B1252503640013C4A9 /* MainViewController.swift in Sources */,
 				04F626E02529F3220013C4A9 /* NetworkService .swift in Sources */,
 				04EDECB4252CDE7B000425E9 /* DetailPresenter.swift in Sources */,
 				04F626AD252503640013C4A9 /* AppDelegate.swift in Sources */,
 				04F626CF252503B30013C4A9 /* Comment.swift in Sources */,
-				04F626D9252649A60013C4A9 /* ModuleBuilder .swift in Sources */,
+				04F626D9252649A60013C4A9 /* AssemblyModuleBuilder .swift in Sources */,
 				04F626AF252503640013C4A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F626C42525036D0013C4A9 /* MVPTests.swift in Sources */,
+				04986A8C2533426B00884F8E /* RouterTest.swift in Sources */,
 				04F626DE25264F4D0013C4A9 /* MainPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

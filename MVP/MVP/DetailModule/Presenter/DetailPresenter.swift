@@ -13,19 +13,27 @@ protocol DetailViewProtocol: class {
 }
 
 protocol DetailViewPresenterProtocol {
-    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, comment: Comment?)
+    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, comment: Comment?)
     func setComment()
+    func tap()
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {
+    
     weak var view: DetailViewProtocol?
+    var router: RouterProtocol?
     let networkService: NetworkServiceProtocol!    //почему не ослабляем также как свойство выше
     var comment: Comment?
     
-    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, comment: Comment?) {
+    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, comment: Comment?) {
         self.view = view
-        self.networkService = networkService        //инжектим ? внедряем то есть?
+        self.networkService = networkService
+        self.router = router        //инжэктим ? внедряем то есть?
         self.comment = comment
+    }
+    
+    func tap() {
+        router?.popToRoot() 
     }
     
     public func setComment() {
