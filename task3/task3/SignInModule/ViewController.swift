@@ -10,13 +10,21 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var logInView: UIView!
+    @IBOutlet weak var txtUserName: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logInButton.layer.cornerRadius = logInButton.frame.size.width/2
+        view.setGradientBackround(colorOne: .blue, colorTwo: .cyan)
+        
+        logInButton.layer.cornerRadius = logInButton.frame.size.height/2
         logInButton.layer.masksToBounds = true
-
+        
+        logInView.layer.cornerRadius = 10
+        logInView.clipsToBounds = true
+        
     }
 }
 
@@ -26,10 +34,8 @@ extension UIView {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
-        
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         layer.insertSublayer(gradientLayer, at: 0)
     }
 }

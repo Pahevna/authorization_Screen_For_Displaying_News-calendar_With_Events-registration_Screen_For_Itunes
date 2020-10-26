@@ -105,7 +105,7 @@
 			children = (
 				04986A9B2541EDA300884F8E /* AppDelegate.swift */,
 				04986A9D2541EDA300884F8E /* SceneDelegate.swift */,
-				04986A9F2541EDA300884F8E /* ViewController.swift */,
+				04A10B8A2547321A00ADB68F /* SignInModule */,
 				04986AA12541EDA300884F8E /* Main.storyboard */,
 				04986AA42541EDAC00884F8E /* Assets.xcassets */,
 				04986AA62541EDAC00884F8E /* LaunchScreen.storyboard */,
@@ -132,6 +132,14 @@
 				04986ABF2541EDAD00884F8E /* Info.plist */,
 			);
 			path = task3UITests;
+			sourceTree = "<group>";
+		};
+		04A10B8A2547321A00ADB68F /* SignInModule */ = {
+			isa = PBXGroup;
+			children = (
+				04986A9F2541EDA300884F8E /* ViewController.swift */,
+			);
+			path = SignInModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
