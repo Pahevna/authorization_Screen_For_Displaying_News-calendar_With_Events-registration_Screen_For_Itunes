@@ -112,6 +112,8 @@
                     <connections>
                         <outlet property="logInButton" destination="uot-eG-IbU" id="qGU-VV-Keq"/>
                         <outlet property="logInView" destination="2gl-ri-vZ5" id="o8S-Pb-aWl"/>
+                        <outlet property="txtPassword" destination="GaD-ly-bai" id="4pR-ev-f8J"/>
+                        <outlet property="txtUserName" destination="1Da-hL-E4d" id="wPe-NG-qoj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
