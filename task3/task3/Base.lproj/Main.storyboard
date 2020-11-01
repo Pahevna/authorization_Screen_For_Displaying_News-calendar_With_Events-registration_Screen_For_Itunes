@@ -48,13 +48,13 @@
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Da-hL-E4d">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Da-hL-E4d">
                                         <rect key="frame" x="25" y="76" width="285" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gTq-Ek-gd1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-ly-bai">
                                         <rect key="frame" x="24" y="146" width="285" height="50"/>
@@ -62,16 +62,16 @@
                                             <constraint firstAttribute="height" constant="50" id="4xh-8n-huZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-jM-6oM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userName" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-jM-6oM">
                                         <rect key="frame" x="51" y="92" width="12" height="15.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15.6" id="bhv-re-hJ4"/>
                                             <constraint firstAttribute="width" constant="12" id="xNa-aV-h2n"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName (1)" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-g1-yft">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" password" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-g1-yft">
                                         <rect key="frame" x="51" y="162" width="12" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="12" id="uI5-eh-NVd"/>
@@ -122,8 +122,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="invalidName" width="12" height="16"/>
-        <image name="invalidName (1)" width="12" height="15"/>
+        <image name=" password" width="12" height="15"/>
+        <image name="userName" width="12" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
