@@ -15,8 +15,11 @@
 		04986AA82541EDAC00884F8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04986AA62541EDAC00884F8E /* LaunchScreen.storyboard */; };
 		04986AB32541EDAD00884F8E /* task3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986AB22541EDAD00884F8E /* task3Tests.swift */; };
 		04986ABE2541EDAD00884F8E /* task3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986ABD2541EDAD00884F8E /* task3UITests.swift */; };
-		04986AD02545B24000884F8E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04986ACE2545B24000884F8E /* Roboto-Regular.ttf */; };
-		04986AD12545B24000884F8E /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04986ACF2545B24000884F8E /* Roboto-Thin.ttf */; };
+		04BADCB02557105200F711B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADCAF2557105200F711B0 /* User.swift */; };
+		04BADCB82557127400F711B0 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADCB72557127400F711B0 /* AuthPresenter.swift */; };
+		04BADCBD2559A77600F711B0 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BADCBC2559A77600F711B0 /* Roboto-Thin.ttf */; };
+		04BADCE42559B1AF00F711B0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADCE32559B1AF00F711B0 /* AuthView.swift */; };
+		04BADCE92559B1E200F711B0 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BADCE82559B1E200F711B0 /* AuthView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,12 @@
 		04986AB92541EDAD00884F8E /* task3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = task3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04986ABD2541EDAD00884F8E /* task3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task3UITests.swift; sourceTree = "<group>"; };
 		04986ABF2541EDAD00884F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04986ACE2545B24000884F8E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		04986ACF2545B24000884F8E /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../Downloads/Roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		04BADCAF2557105200F711B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04BADCB72557127400F711B0 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		04BADCBC2559A77600F711B0 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Roboto/Roboto-Thin.ttf"; sourceTree = SOURCE_ROOT; };
+		04BADCC12559A78900F711B0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		04BADCE32559B1AF00F711B0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		04BADCE82559B1E200F711B0 /* AuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +117,8 @@
 				04986AA42541EDAC00884F8E /* Assets.xcassets */,
 				04986AA62541EDAC00884F8E /* LaunchScreen.storyboard */,
 				04986AA92541EDAC00884F8E /* Info.plist */,
-				04986ACE2545B24000884F8E /* Roboto-Regular.ttf */,
-				04986ACF2545B24000884F8E /* Roboto-Thin.ttf */,
+				04BADCC12559A78900F711B0 /* Roboto-Regular.ttf */,
+				04BADCBC2559A77600F711B0 /* Roboto-Thin.ttf */,
 			);
 			path = task3;
 			sourceTree = "<group>";
@@ -138,8 +145,20 @@
 			isa = PBXGroup;
 			children = (
 				04986A9F2541EDA300884F8E /* AuthViewController.swift */,
+				04BADCAF2557105200F711B0 /* User.swift */,
+				04BADCB72557127400F711B0 /* AuthPresenter.swift */,
+				04BADCED2559B1F500F711B0 /* AuthView */,
 			);
 			path = SignInModule;
+			sourceTree = "<group>";
+		};
+		04BADCED2559B1F500F711B0 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				04BADCE32559B1AF00F711B0 /* AuthView.swift */,
+				04BADCE82559B1E200F711B0 /* AuthView.xib */,
+			);
+			path = AuthView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BADCBD2559A77600F711B0 /* Roboto-Thin.ttf in Resources */,
 				04986AA82541EDAC00884F8E /* LaunchScreen.storyboard in Resources */,
 				04986AA52541EDAC00884F8E /* Assets.xcassets in Resources */,
-				04986AD02545B24000884F8E /* Roboto-Regular.ttf in Resources */,
-				04986AD12545B24000884F8E /* Roboto-Thin.ttf in Resources */,
+				04BADCE92559B1E200F711B0 /* AuthView.xib in Resources */,
 				04986AA32541EDA300884F8E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,9 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BADCB82557127400F711B0 /* AuthPresenter.swift in Sources */,
+				04BADCB02557105200F711B0 /* User.swift in Sources */,
 				04986AA02541EDA300884F8E /* AuthViewController.swift in Sources */,
 				04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */,
 				04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */,
+				04BADCE42559B1AF00F711B0 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.task3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,7 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.task3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

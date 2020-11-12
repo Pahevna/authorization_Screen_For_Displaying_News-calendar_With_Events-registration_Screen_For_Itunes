@@ -38,7 +38,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="26" id="FfF-5h-j1a"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -53,17 +53,10 @@
                                                         <state key="normal" title="Log In">
                                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sg-7t-9OF"/>
+                                                        </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ITi-Gd-BW3">
-                                                        <rect key="frame" x="25" y="76" width="285" height="50"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="ssss"/>
-                                                        <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Lg0-Pa-gAE"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                                    </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAQ-Qt-85R">
                                                         <rect key="frame" x="24" y="146" width="285" height="50"/>
                                                         <constraints>
@@ -72,35 +65,34 @@
                                                         <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userName" translatesAutoresizingMaskIntoConstraints="NO" id="rTg-w1-8dH">
-                                                        <rect key="frame" x="51" y="92" width="12" height="15.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="12" id="4We-AE-nRB"/>
-                                                            <constraint firstAttribute="height" constant="15.6" id="JdJ-ck-68i"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" password" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-Jt-SS5">
                                                         <rect key="frame" x="51" y="162" width="12" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="12" id="xv3-1i-3Nm"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lt0-tj-BhI" customClass="AuthView" customModule="task3" customModuleProvider="target">
+                                                        <rect key="frame" x="25" y="76" width="285" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="285" id="5T8-QR-TdU"/>
+                                                            <constraint firstAttribute="height" constant="50" id="tYV-o5-i26"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="6qn-Jt-SS5" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="51" id="2fK-Oq-xlb"/>
-                                                    <constraint firstItem="ITi-Gd-BW3" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="25" id="973-Si-VAm"/>
+                                                    <constraint firstItem="Lt0-tj-BhI" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="76" id="8Rw-rR-Oxi"/>
                                                     <constraint firstAttribute="trailing" secondItem="JhU-Hj-yQB" secondAttribute="trailing" constant="8" id="AxJ-Kt-kzL"/>
-                                                    <constraint firstItem="rTg-w1-8dH" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="92" id="FCa-JR-snQ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ITi-Gd-BW3" secondAttribute="trailing" constant="23" id="NWA-Sk-Mih"/>
                                                     <constraint firstAttribute="bottom" secondItem="6qn-Jt-SS5" secondAttribute="bottom" constant="140" id="ORE-p2-ah3"/>
                                                     <constraint firstAttribute="height" constant="317" id="Q58-tu-Xil"/>
                                                     <constraint firstItem="JhU-Hj-yQB" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="15" id="QZm-AK-IzX"/>
-                                                    <constraint firstItem="rTg-w1-8dH" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="51" id="Qyd-LF-YGj"/>
                                                     <constraint firstAttribute="trailing" secondItem="oAQ-Qt-85R" secondAttribute="trailing" constant="24" id="UVE-gu-2yF"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ITi-Gd-BW3" secondAttribute="bottom" constant="191" id="UVd-xc-nxA"/>
                                                     <constraint firstItem="JhU-Hj-yQB" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="9" id="UgP-D0-s4Q"/>
+                                                    <constraint firstItem="Lt0-tj-BhI" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="25" id="V91-gm-T59"/>
                                                     <constraint firstItem="9uI-mX-I6g" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="24" id="dqO-2e-Es3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Lt0-tj-BhI" secondAttribute="trailing" constant="23" id="fGL-Mh-y7E"/>
                                                     <constraint firstAttribute="trailing" secondItem="9uI-mX-I6g" secondAttribute="trailing" constant="25" id="lcE-j8-lgn"/>
                                                     <constraint firstAttribute="bottom" secondItem="9uI-mX-I6g" secondAttribute="bottom" constant="51" id="o5Z-hr-kW4"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="317" id="qB2-I6-5rD"/>
@@ -145,7 +137,6 @@
                         <outlet property="logInButton" destination="9uI-mX-I6g" id="9gj-Cz-SNw"/>
                         <outlet property="logInView" destination="E29-YV-8Cm" id="pHt-QI-iqq"/>
                         <outlet property="txtPassword" destination="oAQ-Qt-85R" id="aCv-bV-17P"/>
-                        <outlet property="txtUserName" destination="ITi-Gd-BW3" id="ho8-cL-nTH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,7 +146,6 @@
     </scenes>
     <resources>
         <image name=" password" width="12" height="15"/>
-        <image name="userName" width="12" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
