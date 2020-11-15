@@ -11,9 +11,6 @@
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
-        <array key="Roboto-Thin.ttf">
-            <string>Roboto-Thin</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Auth View Controller-->
@@ -57,20 +54,6 @@
                                                             <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sg-7t-9OF"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAQ-Qt-85R">
-                                                        <rect key="frame" x="24" y="146" width="285" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="iyL-eh-qCl"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                                    </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" password" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-Jt-SS5">
-                                                        <rect key="frame" x="51" y="162" width="12" height="15"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="12" id="xv3-1i-3Nm"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lt0-tj-BhI" customClass="AuthView" customModule="task3" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="76" width="285" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,17 +61,52 @@
                                                             <constraint firstAttribute="width" constant="285" id="5T8-QR-TdU"/>
                                                             <constraint firstAttribute="height" constant="50" id="tYV-o5-i26"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="userName"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" systemColor="separatorColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Username"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juy-2s-ry9" customClass="AuthView" customModule="task3" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="146" width="285" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="gVx-WQ-n3o"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value=" password"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.20000000000000001"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" systemColor="separatorColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAPass" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecurityTextEntry" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="6qn-Jt-SS5" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="51" id="2fK-Oq-xlb"/>
-                                                    <constraint firstItem="Lt0-tj-BhI" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="76" id="8Rw-rR-Oxi"/>
                                                     <constraint firstAttribute="trailing" secondItem="JhU-Hj-yQB" secondAttribute="trailing" constant="8" id="AxJ-Kt-kzL"/>
-                                                    <constraint firstAttribute="bottom" secondItem="6qn-Jt-SS5" secondAttribute="bottom" constant="140" id="ORE-p2-ah3"/>
+                                                    <constraint firstItem="9uI-mX-I6g" firstAttribute="top" secondItem="Juy-2s-ry9" secondAttribute="bottom" constant="20" id="D37-mP-N8H"/>
+                                                    <constraint firstItem="Juy-2s-ry9" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="24" id="Hp5-TY-11J"/>
+                                                    <constraint firstItem="Lt0-tj-BhI" firstAttribute="top" secondItem="JhU-Hj-yQB" secondAttribute="bottom" constant="35" id="Jdc-Ny-sUF"/>
                                                     <constraint firstAttribute="height" constant="317" id="Q58-tu-Xil"/>
                                                     <constraint firstItem="JhU-Hj-yQB" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="15" id="QZm-AK-IzX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="oAQ-Qt-85R" secondAttribute="trailing" constant="24" id="UVE-gu-2yF"/>
+                                                    <constraint firstItem="Juy-2s-ry9" firstAttribute="top" secondItem="Lt0-tj-BhI" secondAttribute="bottom" constant="20" id="Swi-Ti-xR1"/>
                                                     <constraint firstItem="JhU-Hj-yQB" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="9" id="UgP-D0-s4Q"/>
                                                     <constraint firstItem="Lt0-tj-BhI" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="25" id="V91-gm-T59"/>
                                                     <constraint firstItem="9uI-mX-I6g" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="24" id="dqO-2e-Es3"/>
@@ -96,9 +114,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="9uI-mX-I6g" secondAttribute="trailing" constant="25" id="lcE-j8-lgn"/>
                                                     <constraint firstAttribute="bottom" secondItem="9uI-mX-I6g" secondAttribute="bottom" constant="51" id="o5Z-hr-kW4"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="317" id="qB2-I6-5rD"/>
-                                                    <constraint firstItem="oAQ-Qt-85R" firstAttribute="leading" secondItem="E29-YV-8Cm" secondAttribute="leading" constant="24" id="tIo-VE-ofZ"/>
-                                                    <constraint firstItem="6qn-Jt-SS5" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="162" id="wt5-dz-5o4"/>
-                                                    <constraint firstItem="oAQ-Qt-85R" firstAttribute="top" secondItem="E29-YV-8Cm" secondAttribute="top" constant="146" id="yqE-0L-ASa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Juy-2s-ry9" secondAttribute="trailing" constant="24" id="z3s-gL-mjV"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -136,7 +152,6 @@
                         <outlet property="contentView" destination="uaG-vW-9DR" id="Zoe-lI-4YQ"/>
                         <outlet property="logInButton" destination="9uI-mX-I6g" id="9gj-Cz-SNw"/>
                         <outlet property="logInView" destination="E29-YV-8Cm" id="pHt-QI-iqq"/>
-                        <outlet property="txtPassword" destination="oAQ-Qt-85R" id="aCv-bV-17P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -146,6 +161,10 @@
     </scenes>
     <resources>
         <image name=" password" width="12" height="15"/>
+        <image name="userName" width="12" height="16"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,20 +9,53 @@ import UIKit
 
 @IBDesignable class AuthView: UIView {
     
+    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var txtAuth: UITextField!
+    
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+
+    @IBInspectable var borderColor: UIColor? {
+        didSet {
+            layer.borderColor = borderColor?.cgColor
+        }
+    }
+    
+    @IBInspectable var image: UIImage? {
+        didSet {
+            imgView.image = image
+        }
+    }
+   
+    @IBInspectable var placeholder: String? {
+        didSet {
+            txtAuth.placeholder = placeholder
+        }
+    }
+    
+    @IBInspectable var isSecurityTextEntry = false {
+        didSet {
+            txtAuth.isSecureTextEntry = isSecurityTextEntry
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        makeDesignTextField()
-        txtAuth.setLeftPaddingPoints(amount: 47)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
-        makeDesignTextField()
-        txtAuth.setLeftPaddingPoints(amount: 47)
     }
     
     private func setupViews() {
@@ -36,19 +69,5 @@ import UIKit
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "AuthView", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
-    }
-    
-    private func makeDesignTextField() {
-        txtAuth.layer.cornerRadius = txtAuth.frame.size.height/2
-        txtAuth.layer.borderWidth = 0.1  //как сделать доступным Constants.borderWidth
-        txtAuth.layer.masksToBounds = true
-    }
-}
-
-private extension UITextField {
-    func setLeftPaddingPoints (amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
     }
 }

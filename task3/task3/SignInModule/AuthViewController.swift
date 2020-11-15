@@ -11,8 +11,6 @@ class AuthViewController: UIViewController {
 
     @IBOutlet weak var logInView: UIView!
     @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var txtUserName: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var contentView: UIView!
     
     var presenter: AuthPresenterProtocol!
@@ -39,11 +37,6 @@ class AuthViewController: UIViewController {
         
         logInView.layer.cornerRadius = Constants.cornerRadius
         logInView.clipsToBounds = true
-        
-//        txtUserName.layer.cornerRadius = txtUserName.frame.size.height/2
-//        txtUserName.layer.borderWidth = Constants.borderWidth
-//        txtUserName.layer.masksToBounds = true
-
     }
 }
 
@@ -59,15 +52,7 @@ private extension UIView {
     }
 }
 
-private extension UITextField {
-    func setLeftPaddingPoints (amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-}
-
-extension AuthViewController {
+private extension AuthViewController {
     struct Constants {
         static let cornerRadius: CGFloat = 10
         static let borderWidth: CGFloat = 0.1
@@ -77,7 +62,9 @@ extension AuthViewController {
                                                     alpha: 1.0)
         static let colorTwoForContentView = UIColor(red: 0.0/255.0, green: 152.0/255.0,blue: 209.0/255.0,
                                                     alpha: 1.0)
-        static let colorOneForButton = UIColor(red: 64.0/255.0, green: 224.0/255.0,blue: 246.0/255.0, alpha: 1.0)
-        static let colorTwoForButton = UIColor(red: 64.0/255.0, green: 190.0/255.0,blue: 234.0/255.0, alpha: 1.0)
+        static let colorOneForButton = UIColor(red: 64.0/255.0, green: 224.0/255.0,blue: 246.0/255.0,
+                                               alpha: 1.0)
+        static let colorTwoForButton = UIColor(red: 64.0/255.0, green: 190.0/255.0,blue: 234.0/255.0,
+                                               alpha: 1.0)
     }
 }
