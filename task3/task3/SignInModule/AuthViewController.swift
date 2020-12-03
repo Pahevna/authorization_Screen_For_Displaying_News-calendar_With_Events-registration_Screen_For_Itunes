@@ -8,17 +8,25 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-
-    @IBOutlet weak var logInView: UIView!
-    @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var contentView: UIView!
     
-    var presenter: AuthPresenterProtocol!
+    @IBOutlet private weak var logInView: UIView!
+    @IBOutlet private weak var logInButton: UIButton!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet weak var authViewUserName: AuthView!
+    @IBOutlet weak var authViewPassword: AuthView!
+    
+    var presenter: AuthPresenterProtocol? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.setGradientBackround(colorOne: Constants.colorOneForView, colorTwo: Constants.colorTwoForView)
+        authViewUserName.delegate = self
+        authViewPassword.delegate = self
+        authViewUserName.typeText = .userName
+        authViewPassword.typeText = .password
+       
+        view.setGradientBackround(colorOne: Constants.colorOneForView,
+                                  colorTwo: Constants.colorTwoForView)
         contentView.setGradientBackround(colorOne: Constants.colorOneForContentView,
                                          colorTwo: Constants.colorTwoForContentView)
         logInButton.setGradientBackround(colorOne: Constants.colorOneForButton,
@@ -27,8 +35,9 @@ class AuthViewController: UIViewController {
         makeDesign()
     }
     
-    @IBAction func didTapButton (_ sender: Any) {
-        //presenter.login(userName: txtUserName, password: txtUserName)
+    @IBAction func didTapLogIn (_ sender: Any) {
+        presenter?.didTapLogIn(userName: authViewUserName, password: authViewPassword) 
+    
     }
     
     private func makeDesign() {
@@ -66,5 +75,11 @@ private extension AuthViewController {
                                                alpha: 1.0)
         static let colorTwoForButton = UIColor(red: 64.0/255.0, green: 190.0/255.0,blue: 234.0/255.0,
                                                alpha: 1.0)
+    }
+}
+
+extension AuthViewController: AuthViewDelegate {
+    func didUpdateText(typeText: TypeText, text: String) {
+        presenter?.didUpdateFieldWith(type: typeText, updateText: text)
     }
 }

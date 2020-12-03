@@ -51,7 +51,7 @@
                                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sg-7t-9OF"/>
+                                                            <action selector="didTapLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Sg-7t-9OF"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lt0-tj-BhI" customClass="AuthView" customModule="task3" customModuleProvider="target">
@@ -149,6 +149,8 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="authViewPassword" destination="Juy-2s-ry9" id="F4K-Cm-faU"/>
+                        <outlet property="authViewUserName" destination="Lt0-tj-BhI" id="6cp-AU-1x2"/>
                         <outlet property="contentView" destination="uaG-vW-9DR" id="Zoe-lI-4YQ"/>
                         <outlet property="logInButton" destination="9uI-mX-I6g" id="9gj-Cz-SNw"/>
                         <outlet property="logInView" destination="E29-YV-8Cm" id="pHt-QI-iqq"/>

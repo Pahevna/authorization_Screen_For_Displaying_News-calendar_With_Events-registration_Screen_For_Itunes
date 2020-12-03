@@ -7,11 +7,23 @@
 
 import UIKit
 
-@IBDesignable class AuthView: UIView {
+protocol AuthViewDelegate: class {
+    func didUpdateText(typeText: TypeText, text: String)
+}
+
+enum TypeText {
+    case userName
+    case password
+}
+
+@IBDesignable class AuthView: UIView, UITextFieldDelegate {
     
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var txtAuth: UITextField!
+    var typeText = TypeText.userName
+    weak var delegate: AuthViewDelegate?
     
+    @IBOutlet private weak var imgView: UIImageView!
+    @IBOutlet private weak var txtAuth: UITextField!
+        
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
@@ -70,4 +82,16 @@ import UIKit
         let nib = UINib(nibName: "AuthView", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
+        if let text = textField.text,
+            let textRange = Range(shouldChangeCharactersIn, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange,
+                                                       with: replacementString)
+            delegate?.didUpdateText(typeText: typeText, text: updatedText)
+        }
+         return true
+    }
 }
+
+
