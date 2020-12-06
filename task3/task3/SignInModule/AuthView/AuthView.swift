@@ -93,5 +93,3 @@ enum TypeText {
          return true
     }
 }
-
-

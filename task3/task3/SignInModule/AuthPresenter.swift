@@ -22,9 +22,10 @@ class AuthPresenter: AuthPresenterProtocol {
   
     weak var view: AuthViewProtocol?
     var user: User?
-    var userName: String?
-    var password: String?
+    var updateUserName: String?
+    var updatePassword: String?
     var typeText: TypeText?
+    var keychain: KeychainSwift?
  
     required init(view: AuthViewProtocol, user: User) {
         self.view = view
@@ -34,17 +35,19 @@ class AuthPresenter: AuthPresenterProtocol {
     func didUpdateFieldWith(type: TypeText, updateText: String) {
         switch typeText {
         case .userName:
-            userName = updateText
+            updateUserName = updateText
         case .password:
-            password = updateText
+            updatePassword = updateText
         case .none:
-            <#code#>
+            break
         }
     }
     
     func didTapLogIn(userName: AuthView, password: AuthView) {
-        let keychain = KeychainSwift()
+        guard let updateUserName = updateUserName,
+              let updatePassword = updatePassword else { return }
         
-        
+        keychain?.set(updateUserName, forKey: "myUserName")
+        keychain?.set(updatePassword, forKey: "myPassword")
     }
 }
