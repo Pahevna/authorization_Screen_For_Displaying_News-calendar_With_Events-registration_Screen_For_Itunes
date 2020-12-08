@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04265FE8257FE5B600C63F34 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */; };
 		04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9B2541EDA300884F8E /* AppDelegate.swift */; };
 		04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9D2541EDA300884F8E /* SceneDelegate.swift */; };
 		04986AA02541EDA300884F8E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9F2541EDA300884F8E /* AuthViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		04986A982541EDA300884F8E /* task3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = task3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04986A9B2541EDA300884F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04986A9D2541EDA300884F8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				04986A9B2541EDA300884F8E /* AppDelegate.swift */,
 				04986A9D2541EDA300884F8E /* SceneDelegate.swift */,
+				04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */,
 				04A10B8A2547321A00ADB68F /* SignInModule */,
 				04986AA12541EDA300884F8E /* Main.storyboard */,
 				04986AA42541EDAC00884F8E /* Assets.xcassets */,
@@ -188,7 +191,6 @@
 				2FAF32A65E9BBCA408675D15 /* Pods-task3Tests.debug.xcconfig */,
 				B6A7C76353FCAFE3E991CC68 /* Pods-task3Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -447,6 +449,7 @@
 				04986AA02541EDA300884F8E /* AuthViewController.swift in Sources */,
 				04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */,
 				04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */,
+				04265FE8257FE5B600C63F34 /* AssemblyBuilder.swift in Sources */,
 				04BADCE42559B1AF00F711B0 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,11 +9,11 @@ import Foundation
 import KeychainSwift
 
 protocol AuthViewProtocol: class {
-    
+    func showError(text: String)
 }
 
 protocol AuthPresenterProtocol: class {
-    init (view: AuthViewProtocol, user: User)
+    init (view: AuthViewProtocol)
     func didUpdateFieldWith(type: TypeText, updateText: String)
     func didTapLogIn(userName: AuthView, password: AuthView)
 }
@@ -21,33 +21,31 @@ protocol AuthPresenterProtocol: class {
 class AuthPresenter: AuthPresenterProtocol {
   
     weak var view: AuthViewProtocol?
-    var user: User?
-    var updateUserName: String?
-    var updatePassword: String?
+    var updatedUserName: String?
+    var updatedPassword: String?
     var typeText: TypeText?
     var keychain: KeychainSwift?
  
-    required init(view: AuthViewProtocol, user: User) {
+    required init(view: AuthViewProtocol) {
         self.view = view
-        self.user = user
     }
     
     func didUpdateFieldWith(type: TypeText, updateText: String) {
         switch typeText {
         case .userName:
-            updateUserName = updateText
+            updatedUserName = updateText
         case .password:
-            updatePassword = updateText
+            updatedPassword = updateText
         case .none:
             break
         }
     }
     
     func didTapLogIn(userName: AuthView, password: AuthView) {
-        guard let updateUserName = updateUserName,
-              let updatePassword = updatePassword else { return }
+        guard let updatedUserName = updatedUserName,
+              let updatedPassword = updatedPassword else { return }
         
-        keychain?.set(updateUserName, forKey: "myUserName")
-        keychain?.set(updatePassword, forKey: "myPassword")
+        keychain?.set(updatedUserName, forKey: "myUserName")
+        keychain?.set(updatedPassword, forKey: "myPassword")
     }
 }

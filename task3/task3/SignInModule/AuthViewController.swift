@@ -83,3 +83,9 @@ extension AuthViewController: AuthViewDelegate {
         presenter?.didUpdateFieldWith(type: typeText, updateText: text)
     }
 }
+
+extension AuthViewController: AuthViewProtocol {
+    func showError(text: String) {
+       
+    }
+}
