@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class AuthViewController: UIViewController {
     
@@ -15,7 +16,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var authViewUserName: AuthView!
     @IBOutlet weak var authViewPassword: AuthView!
     
-    var presenter: AuthPresenterProtocol? 
+    var presenter: AuthPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class AuthViewController: UIViewController {
         authViewPassword.delegate = self
         authViewUserName.typeText = .userName
         authViewPassword.typeText = .password
-       
+        
         view.setGradientBackround(colorOne: Constants.colorOneForView,
                                   colorTwo: Constants.colorTwoForView)
         contentView.setGradientBackround(colorOne: Constants.colorOneForContentView,
@@ -36,8 +37,7 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func didTapLogIn (_ sender: Any) {
-        presenter?.didTapLogIn(userName: authViewUserName, password: authViewPassword) 
-    
+        presenter?.didTapLogIn(userName: authViewUserName, password: authViewPassword)
     }
     
     private func makeDesign() {
@@ -85,7 +85,13 @@ extension AuthViewController: AuthViewDelegate {
 }
 
 extension AuthViewController: AuthViewProtocol {
-    func showError(text: String) {
-       
+    func showError() {
+    
+        let alert = UIAlertController(title: "Login problem", message: "Wrong password",
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+    
     }
 }
