@@ -18,15 +18,20 @@ protocol AuthPresenterProtocol: class {
     func didTapLogIn(userName: AuthView, password: AuthView)
 }
 
+private struct Keys {
+    static let password = "myPassword"
+    static let userName = "userName"
+    static let launchedBefore = "launchedBefore"
+}
+
 class AuthPresenter: AuthPresenterProtocol {
   
     weak var view: AuthViewProtocol?
     var updatedUserName: String?
     var updatedPassword: String?
-    var typeText: TypeText? 
-    var keychain: KeychainSwift?
-    let firstLaunch = UserDefaults.standard.bool(forKey: "FirstLaunch")
- 
+    var keychain = KeychainSwift()
+    let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBefore)
+  
     required init(view: AuthViewProtocol) {
         self.view = view
         
@@ -34,13 +39,11 @@ class AuthPresenter: AuthPresenterProtocol {
     
     func didUpdateFieldWith(type: TypeText, updateText: String) {
         
-        switch typeText {
+        switch type {
         case .userName:
             updatedUserName = updateText
         case .password:
             updatedPassword = updateText
-        case .none:
-            break 
         }
     }
     
@@ -48,21 +51,21 @@ class AuthPresenter: AuthPresenterProtocol {
         guard let updatedUserName = updatedUserName,
               let updatedPassword = updatedPassword else { return }
         
-        if firstLaunch {
+        if launchedBefore {
             validate()
-       
+            
         } else {
-            
-            keychain?.set(updatedUserName, forKey: "myUserName")
-            keychain?.set(updatedPassword, forKey: "myPassword")
-            
-            UserDefaults.standard.set(true, forKey: "FirstLaunch")
+
+            keychain.set(updatedUserName, forKey: Keys.userName)
+            keychain.set(updatedPassword, forKey: Keys.password)
+            UserDefaults.standard.set(true, forKey: Keys.launchedBefore)
         }
     }
     
     private func validate() {
-        let valuePassword = keychain?.get("myPassword")
-        let valueUserName = keychain?.get("myUserName")
+
+        let valueUserName = keychain.get(Keys.userName)
+        let valuePassword = keychain.get(Keys.password)
         
         if valuePassword == updatedPassword, valueUserName == updatedUserName
         {
