@@ -9,7 +9,8 @@ import Foundation
 import KeychainSwift
 
 protocol AuthViewProtocol: class {
-    func showError()
+    func showError(text: String)
+    func segueToDetailModule() 
 }
 
 protocol AuthPresenterProtocol: class {
@@ -20,7 +21,7 @@ protocol AuthPresenterProtocol: class {
 
 private struct Keys {
     static let password = "myPassword"
-    static let userName = "userName"
+    static let userName = "myUserName"
     static let launchedBefore = "launchedBefore"
 }
 
@@ -67,11 +68,17 @@ class AuthPresenter: AuthPresenterProtocol {
         let valueUserName = keychain.get(Keys.userName)
         let valuePassword = keychain.get(Keys.password)
         
-        if valuePassword == updatedPassword, valueUserName == updatedUserName
-        {
-            print ("LogIn succesufully")
+        if updatedUserName?.count != 0, updatedPassword?.count != 0 {
+            
+            if valueUserName == updatedUserName, valuePassword == updatedPassword
+            {
+                view?.segueToDetailModule() 
+            } else {
+                view?.showError(text: "Wrong password")
+            }
+            
         } else {
-            view?.showError()
+            view?.showError(text: "Please, enter your password ")
         }
     }
 }
