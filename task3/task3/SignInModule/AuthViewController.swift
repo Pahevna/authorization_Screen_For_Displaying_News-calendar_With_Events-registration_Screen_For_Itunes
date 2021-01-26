@@ -90,9 +90,4 @@ extension AuthViewController: AuthViewProtocol {
         present(alert, animated: true, completion: nil)
     
     }
-    
-    func segueToDetailModule() {
-        let detailViewController = ModelBuilder.createDetailModule()
-        navigationController?.pushViewController(detailViewController, animated: true)
-    }
 }

@@ -13,19 +13,22 @@ protocol DetailViewProtocol: class {
 }
 
 protocol DetailPresenterProtocol: class {
-    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getNews()
     var news: [News]? { get set }
 }
 
 class DetailPresenter: DetailPresenterProtocol {
     weak var view: DetailViewProtocol?
+    var router: RouterProtocol?
     let networkService: NetworkServiceProtocol!
     var news: [News]?
   
-    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol,
+                  router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
+        self.router = router
         getNews()
     }
     

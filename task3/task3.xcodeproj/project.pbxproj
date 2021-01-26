@@ -14,6 +14,7 @@
 		0408269A25B8A36C00365C09 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408269825B8A36C00365C09 /* DetailViewController.xib */; };
 		040826A425B9F21400365C09 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826A225B9F21400365C09 /* DetailCollectionViewCell.swift */; };
 		040826A525B9F21400365C09 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040826A325B9F21400365C09 /* DetailCollectionViewCell.xib */; };
+		040826B625C07F5000365C09 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826B525C07F5000365C09 /* Router.swift */; };
 		04265FE8257FE5B600C63F34 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */; };
 		04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9B2541EDA300884F8E /* AppDelegate.swift */; };
 		04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9D2541EDA300884F8E /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		0408269825B8A36C00365C09 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		040826A225B9F21400365C09 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		040826A325B9F21400365C09 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		040826B525C07F5000365C09 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		04986A982541EDA300884F8E /* task3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = task3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04986A9B2541EDA300884F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				04986A9B2541EDA300884F8E /* AppDelegate.swift */,
 				04986A9D2541EDA300884F8E /* SceneDelegate.swift */,
+				040826B525C07F5000365C09 /* Router.swift */,
 				04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */,
 				0408268A25B74BFF00365C09 /* DetailModule */,
 				04A10B8A2547321A00ADB68F /* SignInModule */,
@@ -516,6 +519,7 @@
 				04BADCB82557127400F711B0 /* AuthPresenter.swift in Sources */,
 				04986AA02541EDA300884F8E /* AuthViewController.swift in Sources */,
 				0408268F25B7535500365C09 /* DetailPresenter.swift in Sources */,
+				040826B625C07F5000365C09 /* Router.swift in Sources */,
 				0408268225B74BDF00365C09 /* Response.swift in Sources */,
 				04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */,
 				04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */,

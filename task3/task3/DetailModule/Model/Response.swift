@@ -12,7 +12,7 @@ struct Response: Decodable {
 }
 
 struct News: Decodable {
-    var sectionName: String?
-    var webPublicationDate: String?
-    var webTitle: String?
+    var sectionName: String
+    var webPublicationDate: String
+    var webTitle: String
 }

@@ -10,11 +10,10 @@ import KeychainSwift
 
 protocol AuthViewProtocol: class {
     func showError(text: String)
-    func segueToDetailModule() 
 }
 
 protocol AuthPresenterProtocol: class {
-    init (view: AuthViewProtocol)
+    init (view: AuthViewProtocol, router: RouterProtocol)
     func didUpdateFieldWith(type: TypeText, updateText: String)
     func didTapLogIn(userName: AuthView, password: AuthView)
 }
@@ -28,14 +27,15 @@ private struct Keys {
 class AuthPresenter: AuthPresenterProtocol {
   
     weak var view: AuthViewProtocol?
+    var router: RouterProtocol?
     var updatedUserName: String?
     var updatedPassword: String?
     var keychain = KeychainSwift()
     let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBefore)
   
-    required init(view: AuthViewProtocol) {
+    required init(view: AuthViewProtocol, router: RouterProtocol) {
         self.view = view
-        
+        self.router = router
     }
     
     func didUpdateFieldWith(type: TypeText, updateText: String) {
@@ -72,7 +72,7 @@ class AuthPresenter: AuthPresenterProtocol {
             
             if valueUserName == updatedUserName, valuePassword == updatedPassword
             {
-                view?.segueToDetailModule() 
+                router?.showDetail()
             } else {
                 view?.showError(text: "Wrong password")
             }
