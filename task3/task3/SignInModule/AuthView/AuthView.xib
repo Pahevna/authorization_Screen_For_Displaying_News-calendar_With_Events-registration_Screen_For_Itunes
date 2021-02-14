@@ -32,7 +32,7 @@
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-4p-qm2">
                     <rect key="frame" x="66" y="14" width="206" height="22"/>
-                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="FsN-OG-bCC"/>

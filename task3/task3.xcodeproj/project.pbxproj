@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0408267625B7446E00365C09 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408267525B7446E00365C09 /* NetworkService.swift */; };
-		0408268225B74BDF00365C09 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408268125B74BDF00365C09 /* Response.swift */; };
+		0408268225B74BDF00365C09 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408268125B74BDF00365C09 /* DataResponse.swift */; };
 		0408268F25B7535500365C09 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408268E25B7535500365C09 /* DetailPresenter.swift */; };
 		0408269925B8A36C00365C09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408269725B8A36C00365C09 /* DetailViewController.swift */; };
 		0408269A25B8A36C00365C09 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0408269825B8A36C00365C09 /* DetailViewController.xib */; };
 		040826A425B9F21400365C09 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826A225B9F21400365C09 /* DetailCollectionViewCell.swift */; };
-		040826A525B9F21400365C09 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040826A325B9F21400365C09 /* DetailCollectionViewCell.xib */; };
 		040826B625C07F5000365C09 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826B525C07F5000365C09 /* Router.swift */; };
+		040826C925D0393000365C09 /* ConvertFromStringToData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826C825D0393000365C09 /* ConvertFromStringToData.swift */; };
 		04265FE8257FE5B600C63F34 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */; };
 		04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9B2541EDA300884F8E /* AppDelegate.swift */; };
 		04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04986A9D2541EDA300884F8E /* SceneDelegate.swift */; };
@@ -52,13 +52,13 @@
 
 /* Begin PBXFileReference section */
 		0408267525B7446E00365C09 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		0408268125B74BDF00365C09 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		0408268125B74BDF00365C09 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		0408268E25B7535500365C09 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0408269725B8A36C00365C09 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0408269825B8A36C00365C09 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		040826A225B9F21400365C09 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		040826A325B9F21400365C09 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		040826B525C07F5000365C09 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		040826C825D0393000365C09 /* ConvertFromStringToData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFromStringToData.swift; sourceTree = "<group>"; };
 		04265FE7257FE5B600C63F34 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		04986A982541EDA300884F8E /* task3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = task3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04986A9B2541EDA300884F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		0408268625B74BF500365C09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0408268125B74BDF00365C09 /* Response.swift */,
+				0408268125B74BDF00365C09 /* DataResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +140,7 @@
 				0408268625B74BF500365C09 /* Model */,
 				0408269325B7536100365C09 /* Presenter */,
 				0408269E25B8A37400365C09 /* View */,
+				040826CD25D03BCC00365C09 /* ConvertData */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -166,9 +167,16 @@
 			isa = PBXGroup;
 			children = (
 				040826A225B9F21400365C09 /* DetailCollectionViewCell.swift */,
-				040826A325B9F21400365C09 /* DetailCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		040826CD25D03BCC00365C09 /* ConvertData */ = {
+			isa = PBXGroup;
+			children = (
+				040826C825D0393000365C09 /* ConvertFromStringToData.swift */,
+			);
+			path = ConvertData;
 			sourceTree = "<group>";
 		};
 		04986A8F2541EDA300884F8E = {
@@ -382,7 +390,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BADCBD2559A77600F711B0 /* Roboto-Thin.ttf in Resources */,
-				040826A525B9F21400365C09 /* DetailCollectionViewCell.xib in Resources */,
 				0408269A25B8A36C00365C09 /* DetailViewController.xib in Resources */,
 				04986AA82541EDAC00884F8E /* LaunchScreen.storyboard in Resources */,
 				04986AA52541EDAC00884F8E /* Assets.xcassets in Resources */,
@@ -520,7 +527,8 @@
 				04986AA02541EDA300884F8E /* AuthViewController.swift in Sources */,
 				0408268F25B7535500365C09 /* DetailPresenter.swift in Sources */,
 				040826B625C07F5000365C09 /* Router.swift in Sources */,
-				0408268225B74BDF00365C09 /* Response.swift in Sources */,
+				0408268225B74BDF00365C09 /* DataResponse.swift in Sources */,
+				040826C925D0393000365C09 /* ConvertFromStringToData.swift in Sources */,
 				04986A9C2541EDA300884F8E /* AppDelegate.swift in Sources */,
 				04986A9E2541EDA300884F8E /* SceneDelegate.swift in Sources */,
 				04265FE8257FE5B600C63F34 /* AssemblyBuilder.swift in Sources */,

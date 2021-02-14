@@ -30,7 +30,6 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="HcP-5L-rod"/>
-                        <outlet property="delegate" destination="-1" id="ZzV-do-XVX"/>
                     </connections>
                 </collectionView>
             </subviews>
