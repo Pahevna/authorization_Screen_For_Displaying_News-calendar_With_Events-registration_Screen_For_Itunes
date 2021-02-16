@@ -8,6 +8,7 @@
 import Foundation
 
 struct DataResponse: Decodable {
+    
     private enum CodingKeys: String, CodingKey {
         case response
     }
@@ -28,6 +29,7 @@ struct DataResponse: Decodable {
 }
 
 struct Item: Decodable {
+    var totalPages: Int?
     var news: [News]?
     
     private enum CodingKeys: String, CodingKey {

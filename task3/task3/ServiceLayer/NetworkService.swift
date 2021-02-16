@@ -12,6 +12,7 @@ protocol NetworkServiceProtocol {
 }
 
 class NetworkService: NetworkServiceProtocol {
+    //var totalPages = 1
     
     func getNews(completion: @escaping (Result<[News]?, Error>) -> Void) {
         let urlString = "https://content.guardianapis.com/search?api-key=17b0d369-2abc-4aac-9f22-97619b66faf9"
@@ -26,7 +27,7 @@ class NetworkService: NetworkServiceProtocol {
                 guard let data = data else { return }
                 do {
                     let dataResponse = try JSONDecoder().decode(DataResponse.self, from: data)
-                    print(dataResponse.item?.news ?? "no data from dataResponse")
+                    //self.totalPages = dataResponse.item?.totalPages ?? 1
                     completion(.success(dataResponse.item?.news))
                 } catch {
                     completion(.failure(error))

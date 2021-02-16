@@ -72,6 +72,7 @@ extension DetailViewController: UICollectionViewDataSource {
    guard let arrayNews = detailPresenter?.news else { return }
     
     if indexPath.row == arrayNews.count - 1 {
+        detailPresenter?.getMoreNews()
     }
   }
 }
@@ -83,6 +84,7 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension DetailViewController: UISearchBarDelegate {
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if let searchText = searchController.searchBar.text {
             if searchText.count > 0 {
@@ -90,9 +92,8 @@ extension DetailViewController: UISearchBarDelegate {
             }
         }
     }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         detailPresenter?.getNews()
     }
 }
-
-

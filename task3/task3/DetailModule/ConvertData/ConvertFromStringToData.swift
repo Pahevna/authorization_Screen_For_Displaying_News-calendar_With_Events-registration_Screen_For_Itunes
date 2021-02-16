@@ -14,6 +14,8 @@ public func dateFromISOstringToddMMyyyy(date: String) -> String {
     guard let newDate = dateFormatter.date(from: date) else {return ""}
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let stringDate = dateFormatter.string(from: newDate)
+    
     return stringDate
+    
     }
 }

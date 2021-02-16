@@ -15,6 +15,7 @@ protocol DetailViewProtocol: class {
 protocol DetailPresenterProtocol: class {
     init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getNews()
+    func getMoreNews()
     func searchNews(searchedText: String)
     var news: [News]? { get set }
 }
@@ -38,8 +39,22 @@ class DetailPresenter: DetailPresenterProtocol {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let dataResponse):
-                    print(dataResponse ?? "no data")
                     self.news = dataResponse
+                    self.view?.succes()
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
+        }
+    }
+    
+    func getMoreNews() {
+        networkService.getNews { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let moreData):
+                    self.news?.append(contentsOf: moreData ?? [])
                     self.view?.succes()
                 case .failure(let error):
                     self.view?.failure(error: error)
@@ -52,8 +67,7 @@ class DetailPresenter: DetailPresenterProtocol {
         let searchedNews = news?.filter({ (news: News) -> Bool in
             //возвращает новое множество, содержащее элементы, удовлетворяющие условию
             if news.webTitle.lowercased().contains(searchedText.lowercased()) {
-                // Returns a Boolean value indicating whether the sequence contains the given element
-                // проверяем, содержит ли webTitle с нижнем регистром текст, введенный в строку поиска
+                // проверяем, содержит ли webTitle в нижнем регистре текст, введенный в строку поиска
                 return true
             }
             return false
