@@ -8,30 +8,31 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getNews(completion: @escaping (Result<[News]?, Error>) -> Void)
+    func getNews(page: Int, completion: @escaping (Result<([News]?, Int?), Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
-    //var totalPages = 1
     
-    func getNews(completion: @escaping (Result<[News]?, Error>) -> Void) {
-        let urlString = "https://content.guardianapis.com/search?api-key=17b0d369-2abc-4aac-9f22-97619b66faf9"
+    private let apiKey = "17b0d369-2abc-4aac-9f22-97619b66faf9"
+  
+    func getNews(page: Int, completion: @escaping (Result<([News]?, Int?), Error>) -> Void) {
+        
+        let urlString = "https://content.guardianapis.com/search?api-key=\(apiKey)&page=\(page)"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let error = error {
-                    print("Some error")
                     completion(.failure(error))
                     return
                 }
                 guard let data = data else { return }
                 do {
                     let dataResponse = try JSONDecoder().decode(DataResponse.self, from: data)
-                    //self.totalPages = dataResponse.item?.totalPages ?? 1
-                    completion(.success(dataResponse.item?.news))
+                    let news = dataResponse.item?.news
+                    let currentPage = dataResponse.item?.currentPage
+                    completion(.success((news, currentPage)))
                 } catch {
                     completion(.failure(error))
-                    print("Failed to decode JSON", error)
                 }
         }.resume()
     }

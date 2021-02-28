@@ -21,11 +21,21 @@ protocol DetailPresenterProtocol: class {
 }
 
 class DetailPresenter: DetailPresenterProtocol {
+    
+    // MARK: - Public Properties
+    
     weak var view: DetailViewProtocol?
-    var router: RouterProtocol?
     let networkService: NetworkServiceProtocol!
+    var router: RouterProtocol?
     var news: [News]?
+    
+    // MARK: - Private Properties
+    
+    private var currentPage = 0
+    private var isLoading = false
   
+    // MARK: - Initialization
+    
     required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol,
                   router: RouterProtocol) {
         self.view = view
@@ -33,13 +43,17 @@ class DetailPresenter: DetailPresenterProtocol {
         self.router = router
     }
     
+    // MARK: - Methods DetailPresenterProtocol
+    
     func getNews() {
-        networkService.getNews { [weak self] result in
+        networkService.getNews(page: 1) { [weak self] result in
             guard let self = self else { return }
+            self.isLoading = false
             DispatchQueue.main.async {
                 switch result {
-                case .success(let dataResponse):
-                    self.news = dataResponse
+                case .success((let news, let currentPage)):
+                    self.news = news
+                    self.currentPage = currentPage ?? 0
                     self.view?.succes()
                 case .failure(let error):
                     self.view?.failure(error: error)
@@ -49,12 +63,15 @@ class DetailPresenter: DetailPresenterProtocol {
     }
     
     func getMoreNews() {
-        networkService.getNews { [weak self] result in
+        guard !isLoading else { return }
+        currentPage += 1
+   
+        networkService.getNews(page: currentPage) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
-                case .success(let moreData):
-                    self.news?.append(contentsOf: moreData ?? [])
+                case .success((let news, _)):
+                    self.news?.append(contentsOf: news ?? [])
                     self.view?.succes()
                 case .failure(let error):
                     self.view?.failure(error: error)

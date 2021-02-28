@@ -26,6 +26,8 @@ private struct Keys {
 
 class AuthPresenter: AuthPresenterProtocol {
   
+    // MARK: - Public Properties 
+    
     weak var view: AuthViewProtocol?
     var router: RouterProtocol?
     var updatedUserName: String?
@@ -37,6 +39,8 @@ class AuthPresenter: AuthPresenterProtocol {
         self.view = view
         self.router = router
     }
+    
+    // MARK: - Methods AuthPresenterProtocol
     
     func didUpdateFieldWith(type: TypeText, updateText: String) {
         
@@ -63,8 +67,9 @@ class AuthPresenter: AuthPresenterProtocol {
         }
     }
     
+    // MARK: - Private Method
+    
     private func validate() {
-
         let valueUserName = keychain.get(Keys.userName)
         let valuePassword = keychain.get(Keys.password)
         

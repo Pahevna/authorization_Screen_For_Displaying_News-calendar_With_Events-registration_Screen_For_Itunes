@@ -9,19 +9,31 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - IBOutlet
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    // MARK: - Public Property
     
     var detailPresenter: DetailPresenterProtocol?
+    
+    // MARK: - Private Property
+    
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "News"
+        
         setupSearchBar()
         setupCollectionView()
         detailPresenter?.getNews()
     }
+    
+    // MARK: - Private Methods
     
     private func setupSearchBar() {
         navigationItem.searchController = searchController
@@ -38,7 +50,10 @@ class DetailViewController: UIViewController {
     }
 }
 
+// MARK: - DetailViewProtocol
+
 extension DetailViewController: DetailViewProtocol {
+    
     func succes() {
         collectionView.reloadData()
     }
@@ -50,6 +65,8 @@ extension DetailViewController: DetailViewProtocol {
         present(alert, animated: true)
     }
 }
+
+// MARK: - Collection View Data Source
 
 extension DetailViewController: UICollectionViewDataSource {
     
@@ -77,11 +94,16 @@ extension DetailViewController: UICollectionViewDataSource {
   }
 }
 
+// MARK: - Collection View Delegate Flow Layout
+
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
     }
 }
+
+// MARK: - Search Bar Deleagate
 
 extension DetailViewController: UISearchBarDelegate {
     

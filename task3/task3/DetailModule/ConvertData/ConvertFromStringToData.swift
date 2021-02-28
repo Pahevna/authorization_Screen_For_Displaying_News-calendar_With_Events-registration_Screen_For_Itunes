@@ -8,7 +8,8 @@
 import Foundation
 
 extension String {
-public func dateFromISOstringToddMMyyyy(date: String) -> String {
+
+    public func dateFromISOstringToddMMyyyy(date: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     guard let newDate = dateFormatter.date(from: date) else {return ""}
@@ -16,6 +17,5 @@ public func dateFromISOstringToddMMyyyy(date: String) -> String {
     let stringDate = dateFormatter.string(from: newDate)
     
     return stringDate
-    
     }
 }

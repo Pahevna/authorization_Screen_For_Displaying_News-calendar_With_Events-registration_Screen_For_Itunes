@@ -9,14 +9,23 @@ import UIKit
 
 class DetailCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Static Property 
+    
     static let identifier = "cell"
+    
+    // MARK: - Public Property
+    
+    var controller: DetailViewController?
  
+    // MARK: - Private Properties
+    
     private let sectionName: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
         label.textColor = UIColor.lightGray
         label.font = UIFont.init(name: "Roboto-Regular", size: 5)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
        }()
     
@@ -27,6 +36,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .left
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
        }()
     
@@ -36,10 +46,11 @@ class DetailCollectionViewCell: UICollectionViewCell {
         label.font = UIFont.init(name: "Roboto-Regular", size: 5)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
        }()
     
-    var controller: DetailViewController?
+    // MARK: - Initialization 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +61,9 @@ class DetailCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addViews() {
+    // MARK: - Private Method
+    
+    private func addViews() {
         contentView.addSubview(sectionName)
         contentView.addSubview(webTitle)
         contentView.addSubview(webPublicationDate)
@@ -68,6 +81,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
                                                     constant: 5).isActive = true
         
     }
+    
+    // MARK: - Public Method
     
     public func setDataToCell(sectionName: String, webTitle: String, webPublicationDate: String,
                               controller: DetailViewController) {

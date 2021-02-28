@@ -29,12 +29,13 @@ struct DataResponse: Decodable {
 }
 
 struct Item: Decodable {
-    var totalPages: Int?
-    var news: [News]?
     
     private enum CodingKeys: String, CodingKey {
         case results
     }
+    
+    var news: [News]?
+    var currentPage: Int = 1
     
     init(from decoder: Decoder)
     

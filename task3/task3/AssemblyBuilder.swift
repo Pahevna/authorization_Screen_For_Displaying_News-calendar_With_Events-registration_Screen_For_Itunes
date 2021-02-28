@@ -13,6 +13,7 @@ protocol AssemblyBuilderProtocol {
 }
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
+    
     func createSignInModule(router: RouterProtocol) -> UIViewController {
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
         let presenter = AuthPresenter(view: view, router: router)

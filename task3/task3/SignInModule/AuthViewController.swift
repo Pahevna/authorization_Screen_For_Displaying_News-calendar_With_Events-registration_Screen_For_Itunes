@@ -9,14 +9,20 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var logInView: UIView!
     @IBOutlet private weak var logInButton: UIButton!
     @IBOutlet private weak var contentView: UIView!
-    @IBOutlet weak var authViewUserName: AuthView!
-    @IBOutlet weak var authViewPassword: AuthView!
+    @IBOutlet private weak var authViewUserName: AuthView!
+    @IBOutlet private weak var authViewPassword: AuthView!
+    
+    // MARK: - Public Properties
     
     var presenter: AuthPresenterProtocol?
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,11 +41,16 @@ class AuthViewController: UIViewController {
         makeDesign()
     }
     
+    // MARK: - IBAction
+    
     @IBAction func didTapLogIn (_ sender: Any) {
         presenter?.didTapLogIn(userName: authViewUserName, password: authViewPassword)
     }
     
+    // MARK: - Private Method
+    
     private func makeDesign() {
+        
         logInButton.layer.cornerRadius = logInButton.frame.size.height/2
         logInButton.layer.masksToBounds = true
         
@@ -48,20 +59,27 @@ class AuthViewController: UIViewController {
     }
 }
 
+// MARK: - Private Extensions
+
 private extension UIView {
+    
     func setGradientBackround(colorOne: UIColor, colorTwo: UIColor) {
         
         let gradientLayer = CAGradientLayer()
+       
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
+        
         layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
 private extension AuthViewController {
+    
     struct Constants {
+      
         static let cornerRadius: CGFloat = 10
         static let borderWidth: CGFloat = 0.1
         static let colorOneForView = UIColor(red: 77.0/255.0, green: 90.0/255.0, blue: 200.0/255.0, alpha: 1.0)
@@ -73,21 +91,22 @@ private extension AuthViewController {
     }
 }
 
+// MARK: - Methods AuthViewDelegate
+
 extension AuthViewController: AuthViewDelegate {
+    
     func didUpdateText(typeText: TypeText, text: String) {
         presenter?.didUpdateFieldWith(type: typeText, updateText: text)
     }
 }
 
 extension AuthViewController: AuthViewProtocol {
- 
-    func showError(text: String) {
     
+    func showError(text: String) {
         let alert = UIAlertController(title: "Login problem", message: text,
                                       preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
-    
     }
 }

@@ -18,12 +18,18 @@ enum TypeText {
 
 @IBDesignable class AuthView: UIView, UITextFieldDelegate {
     
-    var typeText = TypeText.userName
+    // MARK: - Public Properties
+    
     weak var delegate: AuthViewDelegate?
+    var typeText = TypeText.userName
+    
+    // MARK: - IBOutlets
     
     @IBOutlet private weak var imgView: UIImageView!
     @IBOutlet private weak var txtAuth: UITextField!
         
+    // MARK: - IBInspectable
+    
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
@@ -60,15 +66,21 @@ enum TypeText {
         }
     }
     
+    // MARK: - Initialization 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+       
         setupViews()
     }
+    
+    // MARK: - Private Methods
     
     private func setupViews() {
         guard let xibViews = loadViewFromXib() else { return }
@@ -82,6 +94,8 @@ enum TypeText {
         let nib = UINib(nibName: "AuthView", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
+    
+    // MARK: - Text Field Delegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
         if let text = textField.text,

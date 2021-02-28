@@ -242,8 +242,8 @@
 		04A10B8A2547321A00ADB68F /* SignInModule */ = {
 			isa = PBXGroup;
 			children = (
-				04986A9F2541EDA300884F8E /* AuthViewController.swift */,
-				04BADCB72557127400F711B0 /* AuthPresenter.swift */,
+				04BDF62025EBB355008FEA25 /* View */,
+				04BDF61C25EBB347008FEA25 /* Presenter */,
 				04BADCED2559B1F500F711B0 /* AuthView */,
 			);
 			path = SignInModule;
@@ -256,6 +256,22 @@
 				04BADCE82559B1E200F711B0 /* AuthView.xib */,
 			);
 			path = AuthView;
+			sourceTree = "<group>";
+		};
+		04BDF61C25EBB347008FEA25 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04BADCB72557127400F711B0 /* AuthPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		04BDF62025EBB355008FEA25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04986A9F2541EDA300884F8E /* AuthViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		93DEAAA94808704E502A1FD6 /* Pods */ = {
