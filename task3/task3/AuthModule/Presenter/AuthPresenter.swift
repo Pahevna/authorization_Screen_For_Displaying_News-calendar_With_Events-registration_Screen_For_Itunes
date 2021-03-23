@@ -13,7 +13,7 @@ protocol AuthViewProtocol: class {
 }
 
 protocol AuthPresenterProtocol: class {
-    init (view: AuthViewProtocol, router: RouterProtocol)
+    init (view: AuthViewProtocol, router: AuthRouterProtocol)
     func didUpdateFieldWith(type: TypeText, updateText: String)
     func didTapLogIn(userName: AuthView, password: AuthView)
 }
@@ -29,13 +29,13 @@ class AuthPresenter: AuthPresenterProtocol {
     // MARK: - Public Properties 
     
     weak var view: AuthViewProtocol?
-    var router: RouterProtocol?
+    var router: AuthRouterProtocol?
     var updatedUserName: String?
     var updatedPassword: String?
     var keychain = KeychainSwift()
     let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBefore)
   
-    required init(view: AuthViewProtocol, router: RouterProtocol) {
+    required init(view: AuthViewProtocol, router: AuthRouterProtocol) {
         self.view = view
         self.router = router
     }
@@ -77,7 +77,7 @@ class AuthPresenter: AuthPresenterProtocol {
             
             if valueUserName == updatedUserName, valuePassword == updatedPassword
             {
-                router?.showDetail()
+                router?.showListNews()
             } else {
                 view?.showError(text: "Wrong password")
             }

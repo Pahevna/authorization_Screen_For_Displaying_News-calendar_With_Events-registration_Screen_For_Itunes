@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCollectionViewCell: UICollectionViewCell {
+class ListNewsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Static Property 
     
@@ -15,7 +15,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public Property
     
-    var controller: DetailViewController?
+    var controller: ListNewsViewController?
  
     // MARK: - Private Properties
     
@@ -85,7 +85,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Method
     
     public func setDataToCell(sectionName: String, webTitle: String, webPublicationDate: String,
-                              controller: DetailViewController) {
+                              controller: ListNewsViewController) {
         self.sectionName.text = sectionName
         self.webTitle.text = webTitle
         self.webPublicationDate.text = webPublicationDate

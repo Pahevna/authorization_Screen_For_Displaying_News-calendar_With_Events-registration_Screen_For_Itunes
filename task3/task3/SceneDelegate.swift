@@ -19,14 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let navigationController = UINavigationController()
-        let assemblyBuilder = AssemblyBuilder()
-        let router = Router(navigationController: navigationController,
-                            assemblyBuilder: assemblyBuilder)
-        router.initialViewController()
+        let authAssemblyBuilder = AuthAssemblyBuilder()
+        _ = authAssemblyBuilder.createAuthModule(navigationController: navigationController)
         
-        window?.rootViewController = navigationController 
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

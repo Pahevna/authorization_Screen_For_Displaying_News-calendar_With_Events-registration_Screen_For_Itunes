@@ -7,26 +7,25 @@
 
 import Foundation
 
-protocol DetailViewProtocol: class {
+protocol ListNewsViewProtocol: class {
     func succes()
     func failure(error: Error)
 }
 
-protocol DetailPresenterProtocol: class {
-    init(view: DetailViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
+protocol ListNewsPresenterProtocol: class {
+    init(view: ListNewsViewProtocol, networkService: NetworkServiceProtocol)
     func getNews()
     func getMoreNews()
     func searchNews(searchedText: String)
     var news: [News]? { get set }
 }
 
-class DetailPresenter: DetailPresenterProtocol {
+class ListNewsPresenter: ListNewsPresenterProtocol {
     
     // MARK: - Public Properties
     
-    weak var view: DetailViewProtocol?
+    weak var view: ListNewsViewProtocol?
     let networkService: NetworkServiceProtocol!
-    var router: RouterProtocol?
     var news: [News]?
     
     // MARK: - Private Properties
@@ -36,11 +35,9 @@ class DetailPresenter: DetailPresenterProtocol {
   
     // MARK: - Initialization
     
-    required init(view: DetailViewProtocol, networkService: NetworkServiceProtocol,
-                  router: RouterProtocol) {
+    required init(view: ListNewsViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
         self.networkService = networkService
-        self.router = router
     }
     
     // MARK: - Methods DetailPresenterProtocol
