@@ -14,6 +14,8 @@
 		040826A425B9F21400365C09 /* ListNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826A225B9F21400365C09 /* ListNewsCollectionViewCell.swift */; };
 		040826C925D0393000365C09 /* ConvertFromStringToData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040826C825D0393000365C09 /* ConvertFromStringToData.swift */; };
 		04559FB3262C8CF3006CF5EE /* AuthPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04559FB2262C8CF3006CF5EE /* AuthPresenterTest.swift */; };
+		04559FBF262CA0DC006CF5EE /* AuthRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04559FBE262CA0DC006CF5EE /* AuthRouterTest.swift */; };
+		04559FCA262DF255006CF5EE /* ListNewsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04559FC9262DF255006CF5EE /* ListNewsPresenterTest.swift */; };
 		045680D225F8E1FB00019239 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045680D125F8E1FB00019239 /* AuthRouter.swift */; };
 		045680DE25F8E48500019239 /* ListNewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045680DD25F8E48500019239 /* ListNewsRouter.swift */; };
 		045680EA25F8EC8100019239 /* AuthAssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045680E925F8EC8100019239 /* AuthAssemblyBuilder.swift */; };
@@ -62,6 +64,8 @@
 		040826A225B9F21400365C09 /* ListNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		040826C825D0393000365C09 /* ConvertFromStringToData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFromStringToData.swift; sourceTree = "<group>"; };
 		04559FB2262C8CF3006CF5EE /* AuthPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenterTest.swift; sourceTree = "<group>"; };
+		04559FBE262CA0DC006CF5EE /* AuthRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouterTest.swift; sourceTree = "<group>"; };
+		04559FC9262DF255006CF5EE /* ListNewsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsPresenterTest.swift; sourceTree = "<group>"; };
 		045680D125F8E1FB00019239 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		045680DD25F8E48500019239 /* ListNewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsRouter.swift; sourceTree = "<group>"; };
 		045680E925F8EC8100019239 /* AuthAssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssemblyBuilder.swift; sourceTree = "<group>"; };
@@ -192,8 +196,17 @@
 			isa = PBXGroup;
 			children = (
 				04559FB2262C8CF3006CF5EE /* AuthPresenterTest.swift */,
+				04559FBE262CA0DC006CF5EE /* AuthRouterTest.swift */,
 			);
 			path = TestAuthModule;
+			sourceTree = "<group>";
+		};
+		04559FD1262DF280006CF5EE /* TestListNewsModule */ = {
+			isa = PBXGroup;
+			children = (
+				04559FC9262DF255006CF5EE /* ListNewsPresenterTest.swift */,
+			);
+			path = TestListNewsModule;
 			sourceTree = "<group>";
 		};
 		045680D625F8E1FF00019239 /* AuthRouter */ = {
@@ -282,6 +295,7 @@
 			children = (
 				04986AB22541EDAD00884F8E /* task3Tests.swift */,
 				04559FB7262C8CFA006CF5EE /* TestAuthModule */,
+				04559FD1262DF280006CF5EE /* TestListNewsModule */,
 				04986AB42541EDAD00884F8E /* Info.plist */,
 			);
 			path = task3Tests;
@@ -622,7 +636,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04559FB3262C8CF3006CF5EE /* AuthPresenterTest.swift in Sources */,
+				04559FBF262CA0DC006CF5EE /* AuthRouterTest.swift in Sources */,
 				04986AB32541EDAD00884F8E /* task3Tests.swift in Sources */,
+				04559FCA262DF255006CF5EE /* ListNewsPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
