@@ -79,9 +79,7 @@ class ListNewsPresenter: ListNewsPresenterProtocol {
     
     func searchNews(searchedText: String) {
         let searchedNews = news?.filter({ (news: News) -> Bool in
-            //возвращает новое множество, содержащее элементы, удовлетворяющие условию
             if news.webTitle.lowercased().contains(searchedText.lowercased()) {
-                // проверяем, содержит ли webTitle в нижнем регистре текст, введенный в строку поиска
                 return true
             }
             return false
