@@ -17,6 +17,7 @@
 		04515ABE27145EBE00122A75 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ABD27145EBE00122A75 /* UIStackView + Extension.swift */; };
 		04515ACB2714640100122A75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ACA2714640100122A75 /* SignUpViewController.swift */; };
 		04515AD02714643600122A75 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ACF2714643600122A75 /* AlbumsViewController.swift */; };
+		048D9BA82715A17800433301 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D9BA72715A17800433301 /* AlbumsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		04515ABD27145EBE00122A75 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		04515ACA2714640100122A75 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		04515ACF2714643600122A75 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		048D9BA72715A17800433301 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		04515A6027144A9B00122A75 = {
 			isa = PBXGroup;
 			children = (
+				048D9BA72715A17800433301 /* AlbumsViewController.swift */,
 				04515A6B27144A9B00122A75 /* auth_valid_itunes_task */,
 				04515A8227144AA200122A75 /* auth_valid_itunes_taskTests */,
 				04515A8D27144AA300122A75 /* auth_valid_itunes_taskUITests */,
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048D9BA82715A17800433301 /* AlbumsViewController.swift in Sources */,
 				04515A7127144A9B00122A75 /* AuthViewController.swift in Sources */,
 				04515A6D27144A9B00122A75 /* AppDelegate.swift in Sources */,
 				04515AD02714643600122A75 /* AlbumsViewController.swift in Sources */,

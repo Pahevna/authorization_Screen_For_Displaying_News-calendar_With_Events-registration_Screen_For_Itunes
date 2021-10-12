@@ -23,30 +23,30 @@ class AuthViewController: UIViewController {
     }()
     
     private let loginLabel: UILabel = {
-        let label = UILabel ()
+        let label = UILabel()
         label.text = "LogIn"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let emailTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Enter email"
-        return textfield
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "Enter email"
+        return textField
     }()
     
     private let passwordTextField: UITextField = {
-        let textfield = UITextField()
-        textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Enter password"
-        textfield.isSecureTextEntry = true
-        return textfield
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "Enter password"
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .darkGray
+        button.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
         button.setTitle("SignUP", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
@@ -68,7 +68,7 @@ class AuthViewController: UIViewController {
     
     private var textFieldsStackView = UIStackView()
     private var buttonsStackView = UIStackView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,26 +76,26 @@ class AuthViewController: UIViewController {
         setupDelegate()
         setConstraints()
     }
-    
+
     private func setupViews() {
         title = "SignIn"
         view.backgroundColor = .white
         
-        textFieldsStackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField],
+        textFieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField],
                                           axis: .vertical,
                                           spacing: 10,
                                           distribution: .fillProportionally)
         
-        buttonsStackView = UIStackView(arrangedSubviews: [signUpButton,signInButton],
-                                       axis: .horizontal,
-                                       spacing: 10,
-                                       distribution: .fillEqually)
+        buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton],
+                                             axis: .horizontal,
+                                             spacing: 10,
+                                             distribution: .fillEqually)
         
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundView)
         backgroundView.addSubview(textFieldsStackView)
-        backgroundView.addSubview(buttonsStackView)
         backgroundView.addSubview(loginLabel)
+        backgroundView.addSubview(buttonsStackView)
     }
     
     private func setupDelegate() {
@@ -115,6 +115,7 @@ class AuthViewController: UIViewController {
     }
 }
 
+//MARK: - UITextFieldDelegate
 extension AuthViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -124,6 +125,7 @@ extension AuthViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - SetConstraints
 extension AuthViewController {
     
     private func setConstraints() {
