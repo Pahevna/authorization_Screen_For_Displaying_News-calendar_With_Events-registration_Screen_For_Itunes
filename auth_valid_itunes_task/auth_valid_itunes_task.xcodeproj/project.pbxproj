@@ -17,7 +17,11 @@
 		04515ABE27145EBE00122A75 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ABD27145EBE00122A75 /* UIStackView + Extension.swift */; };
 		04515ACB2714640100122A75 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ACA2714640100122A75 /* SignUpViewController.swift */; };
 		04515AD02714643600122A75 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515ACF2714643600122A75 /* AlbumsViewController.swift */; };
-		048D9BA82715A17800433301 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D9BA72715A17800433301 /* AlbumsViewController.swift */; };
+		04FFD4E52716EB6F00AA09D8 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4E42716EB6F00AA09D8 /* UIViewController + Extension.swift */; };
+		04FFD4EA2716F6BB00AA09D8 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4E92716F6BB00AA09D8 /* AlbumsTableViewCell.swift */; };
+		04FFD4F62716F9E700AA09D8 /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4F52716F9E700AA09D8 /* DetailAlbumViewController.swift */; };
+		04FFD4FB2717000000AA09D8 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4FA2717000000AA09D8 /* SongsCollectionViewCell.swift */; };
+		04FFD5002717050000AA09D8 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4FF2717050000AA09D8 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +58,11 @@
 		04515ABD27145EBE00122A75 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		04515ACA2714640100122A75 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		04515ACF2714643600122A75 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
-		048D9BA72715A17800433301 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		04FFD4E42716EB6F00AA09D8 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		04FFD4E92716F6BB00AA09D8 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
+		04FFD4F52716F9E700AA09D8 /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
+		04FFD4FA2717000000AA09D8 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		04FFD4FF2717050000AA09D8 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +93,6 @@
 		04515A6027144A9B00122A75 = {
 			isa = PBXGroup;
 			children = (
-				048D9BA72715A17800433301 /* AlbumsViewController.swift */,
 				04515A6B27144A9B00122A75 /* auth_valid_itunes_task */,
 				04515A8227144AA200122A75 /* auth_valid_itunes_taskTests */,
 				04515A8D27144AA300122A75 /* auth_valid_itunes_taskUITests */,
@@ -106,9 +113,10 @@
 		04515A6B27144A9B00122A75 /* auth_valid_itunes_task */ = {
 			isa = PBXGroup;
 			children = (
+				04515A7A27144AA100122A75 /* Info.plist */,
 				04515AA52714527300122A75 /* Applications */,
 				04515AB6271453AE00122A75 /* Controllers */,
-				04515A7A27144AA100122A75 /* Info.plist */,
+				04FFD4EE2716F6BF00AA09D8 /* Cells */,
 				04515AC627145ECC00122A75 /* Extensions */,
 				04515AA92714529600122A75 /* Resources */,
 			);
@@ -157,6 +165,8 @@
 				04515A7027144A9B00122A75 /* AuthViewController.swift */,
 				04515ACA2714640100122A75 /* SignUpViewController.swift */,
 				04515ACF2714643600122A75 /* AlbumsViewController.swift */,
+				04FFD4F52716F9E700AA09D8 /* DetailAlbumViewController.swift */,
+				04FFD4FF2717050000AA09D8 /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				04515ABD27145EBE00122A75 /* UIStackView + Extension.swift */,
+				04FFD4E42716EB6F00AA09D8 /* UIViewController + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -175,6 +186,15 @@
 				04515AC227145EC300122A75 /* UIKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04FFD4EE2716F6BF00AA09D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04FFD4E92716F6BB00AA09D8 /* AlbumsTableViewCell.swift */,
+				04FFD4FA2717000000AA09D8 /* SongsCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +326,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048D9BA82715A17800433301 /* AlbumsViewController.swift in Sources */,
 				04515A7127144A9B00122A75 /* AuthViewController.swift in Sources */,
 				04515A6D27144A9B00122A75 /* AppDelegate.swift in Sources */,
 				04515AD02714643600122A75 /* AlbumsViewController.swift in Sources */,
+				04FFD4FB2717000000AA09D8 /* SongsCollectionViewCell.swift in Sources */,
+				04FFD4EA2716F6BB00AA09D8 /* AlbumsTableViewCell.swift in Sources */,
+				04FFD5002717050000AA09D8 /* UserInfoViewController.swift in Sources */,
+				04FFD4F62716F9E700AA09D8 /* DetailAlbumViewController.swift in Sources */,
+				04FFD4E52716EB6F00AA09D8 /* UIViewController + Extension.swift in Sources */,
 				04515A6F27144A9B00122A75 /* SceneDelegate.swift in Sources */,
 				04515ABE27145EBE00122A75 /* UIStackView + Extension.swift in Sources */,
 				04515ACB2714640100122A75 /* SignUpViewController.swift in Sources */,
