@@ -75,6 +75,11 @@ class AuthViewController: UIViewController {
         setupViews()
         setupDelegate()
         setConstraints()
+        registerKeyboardNotification()
+    }
+    
+    deinit {
+        removeKeyboardNotification()
     }
 
     private func setupViews() {
@@ -115,7 +120,6 @@ class AuthViewController: UIViewController {
     }
 }
 
-//MARK: - UITextFieldDelegate
 extension AuthViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -125,7 +129,43 @@ extension AuthViewController: UITextFieldDelegate {
     }
 }
 
-//MARK: - SetConstraints
+extension AuthViewController {
+    
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        
+        guard let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
+}
+
 extension AuthViewController {
     
     private func setConstraints() {
