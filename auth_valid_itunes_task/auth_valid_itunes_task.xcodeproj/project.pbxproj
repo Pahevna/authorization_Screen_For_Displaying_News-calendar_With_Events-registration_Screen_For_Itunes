@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044172A7271D76FF00922CFE /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044172A6271D76FF00922CFE /* String + Extension.swift */; };
 		04515A6D27144A9B00122A75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515A6C27144A9B00122A75 /* AppDelegate.swift */; };
 		04515A6F27144A9B00122A75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515A6E27144A9B00122A75 /* SceneDelegate.swift */; };
 		04515A7127144A9B00122A75 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515A7027144A9B00122A75 /* AuthViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044172A6271D76FF00922CFE /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		04515A6927144A9B00122A75 /* auth_valid_itunes_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auth_valid_itunes_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04515A6C27144A9B00122A75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04515A6E27144A9B00122A75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				04515AC227145EC300122A75 /* UIKit */,
+				044172A6271D76FF00922CFE /* String + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				04515A7127144A9B00122A75 /* AuthViewController.swift in Sources */,
 				04515A6D27144A9B00122A75 /* AppDelegate.swift in Sources */,
+				044172A7271D76FF00922CFE /* String + Extension.swift in Sources */,
 				04515AD02714643600122A75 /* AlbumsViewController.swift in Sources */,
 				04FFD4FB2717000000AA09D8 /* SongsCollectionViewCell.swift in Sources */,
 				04FFD4EA2716F6BB00AA09D8 /* AlbumsTableViewCell.swift in Sources */,
