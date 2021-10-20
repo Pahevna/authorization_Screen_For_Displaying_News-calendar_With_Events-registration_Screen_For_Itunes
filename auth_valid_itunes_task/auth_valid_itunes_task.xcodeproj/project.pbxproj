@@ -21,6 +21,9 @@
 		046279F8271EC57F00633AFF /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046279F7271EC57F00633AFF /* UserDefaultsManager.swift */; };
 		046279FE271EC66500633AFF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046279FD271EC66500633AFF /* UserModel.swift */; };
 		04627A06271ECDA400633AFF /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627A05271ECDA400633AFF /* AlertOk.swift */; };
+		046905F4272037DA00689538 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046905F3272037DA00689538 /* AlbumModel.swift */; };
+		046905FA2720399500689538 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046905F92720399500689538 /* NetworkRequest.swift */; };
+		046905FF2720413600689538 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046905FE2720413600689538 /* NetworkDataFetch.swift */; };
 		04FFD4E52716EB6F00AA09D8 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4E42716EB6F00AA09D8 /* UIViewController + Extension.swift */; };
 		04FFD4EA2716F6BB00AA09D8 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4E92716F6BB00AA09D8 /* AlbumsTableViewCell.swift */; };
 		04FFD4F62716F9E700AA09D8 /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD4F52716F9E700AA09D8 /* DetailAlbumViewController.swift */; };
@@ -66,6 +69,9 @@
 		046279F7271EC57F00633AFF /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		046279FD271EC66500633AFF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		04627A05271ECDA400633AFF /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		046905F3272037DA00689538 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		046905F92720399500689538 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		046905FE2720413600689538 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		04FFD4E42716EB6F00AA09D8 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		04FFD4E92716F6BB00AA09D8 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		04FFD4F52716F9E700AA09D8 /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 				04515AC627145ECC00122A75 /* Extensions */,
 				046279F6271EC52400633AFF /* Services */,
 				046279FC271EC64500633AFF /* Models */,
+				046905F82720395C00689538 /* Network */,
 				04515AA92714529600122A75 /* Resources */,
 			);
 			path = auth_valid_itunes_task;
@@ -212,8 +219,18 @@
 			children = (
 				046279FD271EC66500633AFF /* UserModel.swift */,
 				04627A05271ECDA400633AFF /* AlertOk.swift */,
+				046905F3272037DA00689538 /* AlbumModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		046905F82720395C00689538 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				046905F92720399500689538 /* NetworkRequest.swift */,
+				046905FE2720413600689538 /* NetworkDataFetch.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		04FFD4EE2716F6BF00AA09D8 /* Cells */ = {
@@ -367,8 +384,11 @@
 				04FFD4F62716F9E700AA09D8 /* DetailAlbumViewController.swift in Sources */,
 				04FFD4E52716EB6F00AA09D8 /* UIViewController + Extension.swift in Sources */,
 				04515A6F27144A9B00122A75 /* SceneDelegate.swift in Sources */,
+				046905FF2720413600689538 /* NetworkDataFetch.swift in Sources */,
+				046905F4272037DA00689538 /* AlbumModel.swift in Sources */,
 				04515ABE27145EBE00122A75 /* UIStackView + Extension.swift in Sources */,
 				04515ACB2714640100122A75 /* SignUpViewController.swift in Sources */,
+				046905FA2720399500689538 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
