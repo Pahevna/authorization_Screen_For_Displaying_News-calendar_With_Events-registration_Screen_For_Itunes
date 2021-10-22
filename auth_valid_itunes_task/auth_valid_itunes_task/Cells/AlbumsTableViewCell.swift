@@ -75,6 +75,13 @@ class AlbumsTableViewCell: UITableViewCell {
         self.addSubview(stackView)
     }
     
+    func configureAlbumCell(album: Album) {
+        
+        albumNameLabel.text = album.collectionName
+        artistNameLabel.text = album.artistName
+        trackCountLabel.text =  "\(album.trackCount)"
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
