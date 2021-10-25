@@ -63,7 +63,7 @@ class AlbumsViewController: UIViewController {
     }
     
     private func fetchAlbums(albumName: String) {
-        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album@attribute=albumTerm"
+        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
         
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self ]albumModel, error in
             
@@ -71,15 +71,17 @@ class AlbumsViewController: UIViewController {
                 
                 guard let albumModel = albumModel else { return }
                 
-                self?.albums = albumModel.results
+                let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
+                    return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
+                }
+                self?.albums = sortedAlbums
                 self?.tableView.reloadData()
             } else {
-                print (error?.localizedDescription)
+                print (error?.localizedDescription ?? "")
             }
         }
     }
 }
-
 
 extension AlbumsViewController: UITableViewDataSource {
     
