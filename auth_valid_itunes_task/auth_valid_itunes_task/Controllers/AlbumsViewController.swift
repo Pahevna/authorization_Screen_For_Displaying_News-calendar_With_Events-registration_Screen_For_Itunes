@@ -71,11 +71,15 @@ class AlbumsViewController: UIViewController {
                 
                 guard let albumModel = albumModel else { return }
                 
-                let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
-                    return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
+                if albumModel.results != [] {
+                    let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
+                        return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
+                    }
+                    self?.albums = sortedAlbums
+                    self?.tableView.reloadData()
+                } else {
+                    self?.showAlertOk(title: "Error", message: "Album not found. Add some words")
                 }
-                self?.albums = sortedAlbums
-                self?.tableView.reloadData()
             } else {
                 print (error?.localizedDescription ?? "")
             }
@@ -105,6 +109,9 @@ extension AlbumsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailAlbumViewController = DetailAlbumViewController()
+        let album = albums[indexPath.row]
+        detailAlbumViewController.album = album
+        detailAlbumViewController.title = album.artistName
         navigationController?.pushViewController(detailAlbumViewController, animated: true)
     }
 }
@@ -112,10 +119,12 @@ extension AlbumsViewController: UITableViewDelegate {
 extension AlbumsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if searchText != "" {
+        guard let text = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+  
+        if text != "" {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
-                self?.fetchAlbums(albumName: searchText)
+                self?.fetchAlbums(albumName: text)
             })
         }
     }
