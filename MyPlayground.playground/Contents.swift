@@ -833,7 +833,7 @@ unitDictionary.count
 unitDictionary.isEmpty
 unitDictionary.keys
 unitDictionary.values
-let test: Set = Set(unitDictionary.keys)
+//let test: Set = Set(unitDictionary.keys)
 
 
 
@@ -1496,20 +1496,20 @@ var reloadVar: Double = reloadNumber(10, 20)
 
 //Тип функций
 
-func plus(_ a: Int, _ b: Int) -> Int {
-   return a + b
-}
+//func plus(_ a: Int, _ b: Int) -> Int {
+//   return a + b
+//}
 
 func minus(_ a: Int, _ b: Int) -> Int {
     a - b
 }
 
-var someFunc: (Int, Int) -> Int
-
-someFunc = plus
+//var someFunc: (Int, Int) -> Int
+//
+//someFunc = plus
 //print(someFunc(4, 5))
 
-someFunc = minus
+//someFunc = minus
 //print(someFunc(10, 2))
 
 //Тип функции, как тип входных параметров
@@ -1520,8 +1520,8 @@ func getResult(_ a: Int, _ b: Int, _ myFunc: (Int, Int) -> Int) {
     print(result)
 }
 
-getResult(5, 10, plus)
-getResult(20, 3, minus)
+//getResult(5, 10, plus)
+//getResult(20, 3, minus)
 
 
 //MARK: - Closures Замыкания
@@ -2046,9 +2046,9 @@ enum DistanceUnit {
     case mile(title: String, denitation: String, countries: [NonISUCountry])
     
     enum NonISUCountry: String {
-        case USA = "Usa"
-        case Liberia = "Liberia"
-        case Myanmar = "Myanmar"
+        case usa = "Usa"
+        case liberia = "Liberia"
+        case myanmar = "Myanmar"
     }
 }
 
@@ -2060,7 +2060,7 @@ let widelyUsedDistanceUnit = DistanceUnit.kilometr(title: "kilometr",
                                                    countries: ["Russia", "European Union"])
 let distanceUnitFromUKAndUSA = DistanceUnit.mile(title: "mile",
                                                  denitation: "mi.",
-                                                 countries: [.Liberia, .USA, .Myanmar])
+                                                 countries: [.liberia, .usa, .myanmar])
 
 func printDistanceUnitInfo(_ distanceUnit: DistanceUnit) {
     
@@ -2070,10 +2070,892 @@ func printDistanceUnitInfo(_ distanceUnit: DistanceUnit) {
     case .versta( _, let denitation, let countries):
         print("Верста. Краткое наименование: \(denitation) Страны: \(countries.joined(separator: ", "))")
     case.mile(_, let denitation, let countries):
-        print("Миля. Краткое наименование: \(denitation) Страны \(countries.map { $0.rawValue }.joined(separator: ", "))")
+        print("Миля. Краткое наименование: \(denitation) Страны: \(countries.map { $0.rawValue }.joined(separator: ", "))")
     }
 }
 
 printDistanceUnitInfo(widelyUsedDistanceUnit)
 printDistanceUnitInfo(oldDistanceUnit)
 printDistanceUnitInfo(distanceUnitFromUKAndUSA)
+
+
+import Foundation
+import UIKit
+//MARK: - Классы и Структуры
+
+/*
+Общее:
+
+- Объявление свойств для хранения значений;
+- Объявление методов;
+- Объявление инициализаторов
+- Могут быть расширены
+- Могут соответствовать протоколам
+ 
+Дополнительные возможности классов:
+- Наследование
+- Приведение типов
+- Деинициализаторы
+- Подсчет ссылок
+*/
+
+//MARK: - Class
+
+// Swift - объектно-ориентированный язык
+// Программа - набор взаимодействующий между собой объектов
+// Класс - описание объекта
+// Экземпляр класса - объект
+
+//Объявление класса
+
+//class People {
+//
+//}
+
+//Свойства класса
+//Все свойства класса должны быть инициализированы к моменту создания класса
+
+//class People {
+//    let name: String = "Serg"
+//    let age: Int = 32
+//}
+
+//Методы класса
+
+//class People {
+//    var name: String = "Serg"
+//    var age: Int = 32
+//
+//    func greeting() {
+//        print("Hi, My name is \(name)")
+//    }
+//}
+
+//Создание объекта/экземпляра класса
+
+//let people = People()
+//people.name = "Mike"
+//people.age = 33
+//print(people.name, people.age)
+//people.greeting()
+
+//Инициализаторы - подготовка объекта
+
+//class Man {
+//    var name: String
+//    var age: Int
+//
+//    init() {
+//        name = "Bob"
+//        age = 21
+//    }
+//}
+//
+//let man = Man()
+//man.age
+
+//Дополнительные инициализаторы
+
+//class Man {
+//    var name: String
+//    var age: Int
+//
+//    init() {
+//        name = "Bob"
+//        age = 21
+//    }
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//}
+//
+//let man = Man()
+//man.age
+//
+//let man2 = Man(name: "Mike", age: 11)
+//man2.name
+//man2.age
+
+//Значение по умолчанию в инициализаторах
+
+//class Man {
+//    var name: String
+//    var age: Int
+//
+//    init(name: String, age: Int = 22) {
+//        self.name = name
+//        self.age = age
+//    }
+//}
+//
+//let man = Man(name: "Bob")
+//man.name
+//man.age
+
+//Делегирование инициализации
+//Инициализатор может вызывать другой инициализатор. Вызывающий инициализатор определен с convenience
+
+//class Man {
+//    var name: String
+//    var age: Int
+//
+//    convenience init() {
+//        self.init(name: "Vlad", age: 45)
+//    }
+//
+//    init(name: String, age: Int = 22) {
+//        self.name = name
+//        self.age = age
+//    }
+//}
+//
+//let man = Man()
+//man.name
+
+//Failable инициализатор - возвращает nil, если произошла ошибка инициализации
+
+class Man {
+    var name: String
+    var age: Int
+
+    init?(name: String, age: Int = 22) {
+        self.name = name
+        self.age = age
+        if age < 0 {
+            return nil
+        }
+    }
+}
+
+//let man = Man(name: "Ann", age: -12)
+//print(man?.name)
+
+//Деинициализация
+
+class Test {
+    var number = 10
+
+    init(number: Int) {
+        self.number = number
+        print("init")
+    }
+    
+    deinit {
+        print("deint")
+    }
+}
+//var test: Test? = Test(number: 11)
+//print(test?.number)
+//
+//test = nil
+
+//Свойства
+//Хранимые свойства: let var
+//Вычисляемые свойства - конструкции, динамически вычисляющие значения
+
+//Ленивые свойства
+//lazy - значение устанавливается при первом обращении к ним
+
+class Girl {
+    lazy var name = "Olga"
+    lazy var age = 24
+}
+
+//Вычисляемые свойства
+/*
+ var имя_свойства: тип {
+     get {
+         //вычисление значения
+     }
+     set (параметр) {
+         // установка значения
+     }
+ }
+ */
+
+//class Account {
+//
+//    var capital: Double = 0
+//    var rate: Double = 0.01
+//
+//    var profit: Double {
+//        get {
+//            return capital + capital * rate
+//        }
+//        set(newProfit) {
+//            capital = newProfit / (1 + rate)
+//        }
+//    }
+//
+//    init(capital: Double, rate: Double) {
+//        self.capital = capital
+//        self.rate = rate
+//    }
+//}
+
+//var myAcc = Account(capital: 1000, rate: 0.1)
+//print(myAcc.profit)
+//
+//myAcc.profit = 1500
+//print(myAcc.capital)
+
+//Сокращенная форма
+
+//set {
+//    self.capital = newValue / (1 + rate)
+//}
+
+//Наблюдатели свойств
+
+//willSet - вызывается перед установкой нового значения
+//didSet - вызывается после установки нового значения
+
+/*
+ var свойство: тип {
+     willSet (параметр){
+         // выражения
+     }
+     didSet (параметр){
+         // выражения
+     }
+ }
+ */
+
+class Account {
+    
+    var capital: Double {
+        willSet(newCapital) {
+            print("Старая сумма вклада \(self.capital). Новая сумма: \(newCapital)")
+        }
+        didSet(oldCapital) {
+            print("Старая вклада увеличина на \(self.capital - oldCapital)")
+        }
+    }
+    
+    var rate: Double
+    
+    init(capital: Double, rate: Double) {
+        self.capital = capital
+        self.rate = rate
+    }
+}
+
+let myAcc = Account(capital: 1000, rate: 0.1)
+myAcc.capital = 1200
+
+//Статические свойства - относятся не к экземплярам, а ко всему типу
+
+class Greeting {
+    static let english = "hello"
+    static let french = "salut"
+}
+
+print(Greeting.english)
+
+class Deposit {
+    var capital: Double
+    var rate: Double
+    
+    static var usdRate: Double = 75
+    
+    init(capital: Double, rate: Double) {
+        self.capital = capital
+        self.rate = rate
+    }
+    
+    func convert() -> Double {
+        return capital / Deposit.usdRate
+    }
+}
+
+var myDeposit = Deposit(capital: 1000, rate: 0.1)
+myDeposit.convert()
+Deposit.usdRate = 33
+myDeposit.convert()
+
+//MARK: - Структуры
+
+//struct User {
+//    let name: String
+//    let age: Int
+//}
+//
+//let user = User(name: "Serg", age: 32)
+//user.name
+//user.age
+
+//Инициализатор структуры
+//Все свойства должны быть инициализированы
+
+//struct User {
+//    let name: String
+//    let age: Int
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//
+//    init(name: String) {
+//        self.init(name: name, age: 28)
+//    }
+//}
+//
+//let user = User(name: "Serg")
+//user.name
+//user.age
+//
+//let secondUser = User(name: "Mike", age: 40)
+//secondUser.name
+//secondUser.age
+
+//Методы структуры
+
+//struct User {
+//    var name: String
+//    let age: Int
+//    let test = "ddfs"
+//
+//    func getInfo() -> String {
+//        return "Имя \(name). Возраст \(age)"
+//    }
+//
+//    mutating func setName(name: String) {
+//        self.name = name
+//    }
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//
+//    init(name: String) {
+//        self.init(name: name, age: 28)
+//    }
+//}
+
+//var secondUser = User(name: "Mike", age: 40)
+//secondUser.getInfo()
+//secondUser.setName(name: "Olga")
+//secondUser.name
+
+//Class - сссылочный тип
+
+class First {
+    var number = 10
+}
+
+struct Second {
+    var number = 10
+}
+
+//let first = First()
+//let secondClass = first
+//secondClass.number = 15
+//secondClass.number
+//first.number
+//
+//var second = Second()
+//let secondStruct = second
+//second.number = 15
+//second.number
+//secondStruct.number
+
+//Расширения
+//Методы
+
+//extension First {
+//    func plus() {
+//        number += 100
+//    }
+//}
+//
+//first.plus()
+//first.number
+
+//Соответствие протоколу
+
+//extension First: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        9
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//}
+
+//Глобальные и локальные свойства
+
+
+//MARK: - Домашнее задание
+//ЗАДАНИЕ 1:
+// 1.1 Создайте стуктуру User со следующими свойствами:
+// - name: String
+// - age: Int
+// - money: Int
+// - status: String
+//1.2 - Свойство status должно возвращать сообщение с именем пользователя и количеством денег на его счету
+//1.3 - Реализуйте метод plus, который увеличивает счет пользователя на 100 единиц
+//1.4 - Создайте экземпляр структуры и инициализируйте ее свойства
+//1.5 - Выведете в консоль свойство status
+//1.6 - Вызовите метод plus
+//1.7 - Выведете в консоль свойство status
+
+
+//1
+struct User {
+    let name: String
+    let age: Int
+    var money: Int
+    
+    //1.2
+    var status: String {
+        get {
+            return "\(name) имеет на счету \(money) рублей"
+        }
+    }
+    
+    //1.3
+    mutating func plus() {
+        money += 100
+    }
+}
+
+//1.4
+var user = User(name: "Jonh", age: 18, money: 10_000)
+//1.5
+print(user.status)
+
+//1.6
+user.plus()
+//1.7
+print(user.status)
+
+
+//ЗАДАНИЕ 2:
+//2.1 - Создайте класс Ball со следующими свойствами:
+// - type: String
+// - radius: Double
+// - color: String
+//2.2 - Создайте инициализатор, в котором значения для свойств type и color заданы по умолчанию, а свойство radius должно быть обязательным для инициализации
+//2.3 -  Создайте свойство ballVolume, которое будет возвращать объем мяча. НО! вычисление объема необходимо реализовать в методу setBallVolume (число пи - либо 3.14, либо Double.pi)
+// P.S. Для вычислений необходимо загуглить как возводить число в степерь в Swift
+//2.4 - Создайте экземпляр класса, проинициализировав только радиус
+//2.5 - Выведите в консоль сообщение "Объем мяча равен _", используя свойство ballVolume
+
+//2.1
+class Ball {
+    let type: String
+    let radius: Double
+    let color: String
+    
+    //2.2
+    init(type: String = "football", color: String = "black", radius: Double) {
+        self.type = type
+        self.color = color
+        self.radius = radius
+    }
+    //2.3
+    var ballVolume: Double {
+        return setBallVolume()
+    }
+    
+    func setBallVolume() -> Double {
+        4 / 3 * Double.pi * pow(radius, 3)
+    }
+}
+//2.4
+let ball = Ball(radius: 2)
+//2.5
+print("Объяем мяча равен \(ball.setBallVolume())")
+
+//ЗАДАЧА 3:
+//3.1 Создайте класс Student со следующими свойствами:
+// - name: String
+// - mark: Int
+//3.2 - Создайте массив names вне класса, содержащий 5 имен (каждый элемент типа String)
+//3.3 - Создайте пустой массив students, каждый элемент которого будет Student
+//3.4 - Заполните массив students таким образом, чтобы он содержал 5 элементов, имена инициализируются случайными именами из массива names, а оценки создаются случайным образов в диапазоне от 1 до 5
+//3.5 Проверте, что массив student содержит 5 элементов
+//3.6 Используя цикл, выведите в консоль сообщение по каждому студенту в формате: "Оценка имяСтудента: оценкаСтудента"
+//3.7 Используя цикл, выведите в консоль имена тех студентов, чья оценка 4 или 5
+//3.8 Используя .filter для массива, сохраните в константу студентов, чью оценки 4 и 5
+//3.9 Используя созданную выше константу и .forEach, выведете в консоль "Оценка имяСтудента: оценкаСтудента"
+
+//3.1
+//class Student {
+//    let name: String
+//    let mark: Int
+//
+//    init(name: String, mark: Int) {
+//        self.name = name
+//        self.mark = mark
+//    }
+//}
+//
+////3.2
+//let arrayOfNames = ["Pavel", "Ivan", "Alex", "Denis", "Roman"]
+////3.3
+//var arrayOfStudents = [Student]()
+
+//3.4
+//arrayOfStudents += [Student(name: arrayOfNames.randomElement() ?? "", mark: Int.random(in: 1...5)),
+//                    Student(name: arrayOfNames.randomElement() ?? "", mark: Int.random(in: 1...5)),
+//                    Student(name: arrayOfNames.randomElement() ?? "", mark: Int.random(in: 1...5)),
+//                    Student(name: arrayOfNames.randomElement() ?? "", mark: Int.random(in: 1...5)),
+//                    Student(name: arrayOfNames.randomElement() ?? "", mark: Int.random(in: 1...5))]
+
+//3.5
+//print(arrayOfStudents.count)
+
+//3.6
+//func printMarkOfStudent() {
+//    for student in arrayOfStudents {
+//        print("Оценка студента \(student.name): \(student.mark)")
+//    }
+//}
+
+//3.7
+//func printGoodStudents() {
+//    for student in arrayOfStudents {
+//        if student.mark > 3 {
+//            print("студент \(student.name) получил хорошую оценку")
+//        }
+//    }
+//}
+//
+//printMarkOfStudent()
+//printGoodStudents()
+
+//3.8
+
+//let goodStudent = arrayOfStudents.filter { $0.mark > 3 }
+
+//3.9
+//func printNameAndMarkGoodStudents() {
+//    goodStudent.forEach { goodStudent in
+//        print("Оценка \(goodStudent.name): \(goodStudent.mark)")
+//    }
+//}
+
+//printNameAndMarkGoodStudents()
+
+//MARK: - Наследование
+
+//Класс может наследовать методы и свойства другого класса
+
+//Класс у которого наследуют - суперкласс/родительский/базовый
+//Класс который наследует - подкласс/дочерний
+
+//class People {
+//    var eyes = "blue"
+//    var hand = 2
+//}
+//
+//class Serg: People {
+//    let leg = 2
+//}
+//
+//let serg = Serg()
+//serg.eyes
+//serg.hand
+//serg.leg
+
+//Super - позволяет обращаться из подкласса к свойства и методам суперкласса
+//init
+
+class People {
+    var firstName = ""
+    var secondName = ""
+    var eyes = ""
+    var hand = 2
+    var leg = 2
+    
+    final var fullName: String {
+        firstName + " " + secondName
+    }
+    
+    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int) {
+        self.firstName = firstName
+        self.secondName = secondName
+        self.eyes = eyes
+        self.hand = hand
+        self.leg = leg
+    }
+
+    func greeting() -> String {
+        "Hi"
+    }
+}
+
+//class Serg: People {
+//    let acc: String
+//
+//    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int, acc: String) {
+//        self.acc = acc
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//}
+//
+//let serg = Serg(firstName: "Sergey", secondName: "Gorbachev", eyes: "blue", hand: 2, leg: 2, acc: "Serg")
+//serg.firstName
+//serg.acc
+//serg.greeting()
+//serg.fullName
+
+//Переопределение методов
+
+//class Serg: People {
+//    let acc: String
+//
+//    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int, acc: String) {
+//        self.acc = acc
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//
+////    override func greeting() -> String {
+////        "Hello"
+////    }
+//
+//    override func greeting() -> String {
+//        super.greeting() + " " + "Hello"
+//    }
+//}
+//
+//let serg = Serg(firstName: "Sergey", secondName: "Gorbachev", eyes: "blue", hand: 2, leg: 2, acc: "Serg")
+//serg.greeting()
+
+//Переопределение свойств
+
+//class Serg: People {
+//    let acc: String
+//
+//    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int, acc: String) {
+//        self.acc = acc
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//
+////    override var fullName: String {
+////        firstName + " " + secondName + " " + acc
+////    }
+//
+//    override var fullName: String {
+//        super.fullName + " " + acc
+//    }
+//}
+//
+//let serg = Serg(firstName: "Sergey", secondName: "Gorbachev", eyes: "blue", hand: 2, leg: 2, acc: "Serg")
+//serg.fullName
+
+//Переопределение инициализаторов
+//required
+
+//class Serg: People {
+//    let acc: String
+//
+//    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int, acc: String) {
+//        self.acc = acc
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//
+//    required init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int) {
+//        self.acc = "Serg"
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//}
+//
+//let serg = Serg(firstName: "Sergey", secondName: "Gorbachev", eyes: "blue", hand: 2, leg: 2, acc: "Serg")
+
+//Запрет переопределения
+//final
+
+//class Serg: People {
+//    let acc: String
+//
+//    init(firstName: String, secondName: String, eyes: String, hand: Int, leg: Int, acc: String) {
+//        self.acc = acc
+//        super.init(firstName: firstName, secondName: secondName, eyes: eyes, hand: hand, leg: leg)
+//    }
+//
+//    override var fullName: String {
+//        super.fullName + " " + acc
+//    }
+//}
+//
+//let serg = Serg(firstName: "Sergey", secondName: "Gorbachev", eyes: "blue", hand: 2, leg: 2, acc: "Serg")
+//serg.fullName
+
+//MARK: - Полиморфизм
+//Полиморфизм - свойство, которое позволяет одно и то же имя, например имя метода, использовать для решения нескольких внешне схожих, но технически разных задач
+
+//Полиморфизм: один интерфейс - множество реализаций
+
+class Person {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func greeting() {
+        print("Я человек! Меня зовут \(name)")
+    }
+}
+
+class Student: Person {
+    var course: Int
+    
+    init(name: String, course: Int) {
+        self.course = course
+        super.init(name: name)
+    }
+    
+    override func greeting() {
+        print("Я человек! Меня зовут \(name), Я студент \(course) курса")
+    }
+}
+
+class StudentWithHobby: Student {
+    var hobby: String
+    
+    init(name: String, course: Int, hobby: String) {
+        self.hobby = hobby
+        super.init(name: name, course: course)
+    }
+    
+    override func greeting() {
+        print("Я человек! Меня зовут \(name), Я студент \(course) курса. Мое хобби \(hobby)")
+    }
+}
+
+let person = Person(name: "Mike")
+let student = Student(name: "Bob", course: 3)
+let studentWithHobby = StudentWithHobby(name: "Alex", course: 4, hobby: "car")
+
+person.greeting()
+student.greeting()
+studentWithHobby.greeting()
+
+let test = [person, student, studentWithHobby]
+
+//Принципы SOLID (L - принцип Барбары Лисков)
+//Наследники имитируют базовый класс. Замена никак себя не проявляет
+
+//Примеры: Регистратор и посетитель
+//Летающий автомобиль
+//Квадрат и прямоугольник
+
+//MARK: - Инкапсуляция
+//2 определения:
+//Инкапсуляция - сокрытие методов и полей класса, которые не нужны при использовании объектов этого класса
+//Инкапсуляция - объединение данных и методов, которые обрабатывают эти данные
+
+//Инкапсуляция - проектирование класса таким образом, чтобы скрыть те методы и поля, которые могут нарушить логику работы класса. Отвечает какие возможности будут доступны
+
+//class First {
+//
+//    var number = 1
+//
+//    private func firstName() {
+//        number += 1
+//    }
+//}
+//
+//let first = First()
+//first.number
+
+//Пример кнопка
+
+
+//MARK: - Абстракция
+//Абстракция - отделение концепции от ее экземпляра
+//SOLID (D - Dependency inversion)
+//Абстракция - декомпозиция. Адрес, телефон и т.д.
+
+
+//MARK: - Домашнее задание
+
+//1.1 Создайте класс Shape cо следующими вычисляемыми свойствами:
+// square: Double
+// perimeter: Double
+// description: String
+
+//1.2 description должно возвращать сообщение:
+// "Square of shape _ is _. Perimeter - _."
+
+//1.3 Создайте классы Circle и Rectangle, унаследовав их от Shape.
+
+//1.4 Добавьте необходимые свойства для вычисления площади и периметра
+
+//1.5 Переопределите свойства square и perimeter для каждого класса, добавив необходимую формулу для вычисления
+
+//1.6 Создайте класс Ellips, унаследовав его от Rectangle
+
+//1.7 Переопределите свойства square и perimeter, добавив необходимую формулу для вычисления
+//P.S. для расчетов использовать ширину и высоту
+
+//1.8 Создайте по экземпляру каждого класса, кроме Shape и выведите значение свойства description на консоль
+
+class Shape {
+    var square: Double { perimetr * 2  }
+    var perimetr: Double { square / 2 }
+    
+    var description: String {
+        "Square of shape \(self) is \(square). Perimeter - \(perimetr)."
+    }
+}
+
+class Circle: Shape {
+    let radius: Double
+    let diametr: Double
+    
+    init(radius: Double, diametr: Double) {
+        self.radius = radius
+        self.diametr = diametr
+    }
+    
+    override var square: Double { Double.pi * pow(radius, 2) }
+    override var perimetr: Double { diametr * Double.pi }
+    
+}
+
+class Rectangle: Shape {
+    let length: Double
+    let width: Double
+    
+    init(length: Double, width: Double) {
+        self.length = length
+        self.width = width
+    }
+    
+    init (width: Double) {
+        self.width = width
+        self.length = 0
+    }
+    
+    override var square: Double { length * width }
+    override var perimetr: Double {2 * (length + width) }
+}
+
+class Ellips: Rectangle {
+    let height: Double
+    
+    init(height: Double, width: Double) {
+        self.height = height
+        super.init(width: width)
+    }
+    
+    override var square: Double { width * height * Double.pi}
+    override var perimetr: Double { 4 * Double.pi * width * height }
+}
+
+let circle = Circle(radius: 10, diametr: 12)
+let rectangle = Rectangle(length: 10, width: 20)
+let ellips = Ellips(height: 20, width: 10)
+
+print(ellips.description)
+print(circle.description)
+print(rectangle.description)
